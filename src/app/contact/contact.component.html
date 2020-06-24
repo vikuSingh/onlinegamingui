@@ -1,0 +1,21 @@
+<div class="container">
+    <form action="action_page">
+  
+      <input type="text" id="firstName" name="firstName" placeholder="firstname name.." [(ngModel)]="firstName">
+      
+
+      <input type="text" id="lastName" name="lastName" placeholder="last name.." [(ngModel)] = "lastName">
+  
+      <select id="country" name="country" >
+     
+        <option value="India">India</option>
+        <option value="Canada">Canada</option>
+        <option value="Usa">USA</option>
+      </select>
+      <input type="text" id="mobileNo" name="mobileNo" placeholder="mobile no.." [(ngModel)]="mobileNo">
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" [(ngModel)] = "subject"></textarea>
+      
+      <input type="submit" value="Submit" (click)="addContact()">
+  
+    </form>
+  </div>
