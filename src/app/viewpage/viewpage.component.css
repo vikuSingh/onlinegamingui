@@ -114,7 +114,7 @@ margin-top:200px;
       margin-top: 200px;
       vertical-align:middle;
       position: absolute;
-      margin-left: 50px;
+      margin-left: 100px;
       padding: 16px;
       color: white;
       font-weight: bold;
@@ -126,8 +126,7 @@ margin-top:200px;
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
-    
-      
+      margin-right: 100px;
     }
     
     /* On hover, add a black background color with a little bit see-through */
