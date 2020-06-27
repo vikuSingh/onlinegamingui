@@ -12,29 +12,29 @@ export class EmployeeRegistrationComponent implements OnInit {
 
   empregistration:EmployeeRegistration=new EmployeeRegistration();
   response:any;
-  employeeName:string;
-  employeeId:string;
+  eid:number;
+  ename:string;
   address:string;
-  age:string;
+  age:number;
   email:string;
   phoneNumber:string;
-  dateOfBirth:string;
+  dob:string;
   gender:string;
-
-
+   
   constructor(private empregservice:EmployeeRegistrationService) { }
 
   ngOnInit() {
 
   }
   public empRegister() {
-     this.empregistration.eid=this.employeeId;
-     this.empregistration.ename=this.employeeName;
+      
+     this.empregistration.eid=this.eid;
+     this.empregistration.ename=this.ename;
      this.empregistration.address=this.address;
      this.empregistration.age=this.age;
      this.empregistration.email=this.email;
      this.empregistration.phoneNumber=this.phoneNumber;
-     this.empregistration.dob=this.dateOfBirth;
+     this.empregistration.dob=this.dob;
      this.empregistration.gender=this.gender;
 
 
