@@ -1,39 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-</head>
-<body>
+<div class="bg">
   <div class="container ml-5 ">
-          
-    <form class="m-5 mt-5" style="float: right;">
+    <form class="m-5 mt-5" style="float: right;" #billingForm="ngForm">
       <h3 style="text-align: center;">Login</h3>
-        <div class="form-group mt-5" >
-          <input type="text" 
-          class="form-control" 
-          id="exampleInputUsername" 
-          placeholder="Username">
-        </div>
-        <div class="form-group">
-          <input type="password" 
-          class="form-control"
-           id="exampleInputPassword" 
-           placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button> &nbsp;&nbsp;
-       <a href="forgotpassword" class="btn btn-primary" role="button">Forgot Password</a>&nbsp;&nbsp;
-        <a href="registration" class="btn btn-primary" role="button">Sign Up</a>
-      </form>
-    </div>
-</body>
 
+      <div class="form-group mt-5">
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username"
+          placeholder="Username" #uname="ngModel" required>
+      </div>
 
+      <div *ngIf="uname.invalid && (uname.dirty || uname.touched)" class="alert alert-danger">
+        <div *ngIf="uname.errors.required">! Username is required.</div>
+      </div>
 
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
+          placeholder="Password" #pwd="ngModel" required>
+      </div>
 
+      <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)" class="alert alert-danger">
+        <div *ngIf="pwd.errors.required">! Password is required.</div>
+      </div>
 
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
 
+      <button type="submit" class="btn btn-primary" (click)="getLogin()"
+        [disabled]="!billingForm.form.valid">Submit</button> &nbsp;&nbsp;
+
+      <a href="forgotpassword" class="btn btn-primary" role="button">Forgot Password</a>&nbsp;&nbsp;
+
+      <a href="registration" class="btn btn-primary" role="button">Sign Up</a>
+    </form>
+  </div>
+</div>
