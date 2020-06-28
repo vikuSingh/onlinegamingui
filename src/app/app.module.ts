@@ -41,6 +41,7 @@ import { PackageComponent } from './package/package.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

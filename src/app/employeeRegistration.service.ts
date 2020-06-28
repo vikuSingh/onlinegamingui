@@ -11,13 +11,13 @@ const httpOptions = {
 })
 export class EmployeeRegistrationService {
 
-  private EMPLOYEE_URL="http://localhost:5050/onlinegaming/";
+  private EMPLOYEE_URL="http://localhost:5050/onlinegaming/employee";
 
   constructor( private httpClient: HttpClient) { }
 
   public empRegister(employeeRegistration): Observable<any>{
 
-    return this.httpClient.post<any>(this.EMPLOYEE_URL+"register",employeeRegistration, httpOptions);
+    return this.httpClient.post<any>(this.EMPLOYEE_URL+"/save",employeeRegistration, httpOptions);
 
   }
 }
