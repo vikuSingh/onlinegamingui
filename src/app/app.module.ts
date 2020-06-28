@@ -16,7 +16,6 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { PackageComponent } from './package/package.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
  
 
@@ -34,7 +33,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     EventComponent,
     AboutComponent,
     ContactComponent,
-    PackageComponent,
     SidenavComponent
 
   ],
