@@ -25,28 +25,30 @@
 
         <div class="form-group col-md-4">
           <label class="control-label " for="FatherName"><strong>Father Name:</strong></label>
-          <input type="text" class="form-control" id="FatherName" placeholder="Enter Father Name" name="FatherName"
-            [(ngModel)]="FatherName" #Fathername="ngModel" required minlength="3">
+          <input type="text" class="form-control" id="FatherName" placeholder="Enter Father Name" name="fatherName"
+            [(ngModel)]="fatherName" #Fathername="ngModel" required minlength="3">
+          </div>
           <div *ngIf="Fathername.invalid && (Fathername.dirty || Fathername.touched)" class="alert alert-danger">
             <div *ngIf="Fathername.errors.required">name is required</div>
             <div class="errorMsg" *ngIf="fname.errors.minlength">Should be atleast 3 characters</div>
           </div>
-        </div>
+        
 
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 form-group">
           <label class="control-label" for="DOB"><strong>Date Of Birth:</strong></label>
-          <input class="form-control" id="DOB" type="date" placeholder="Enter DOB" [(ngModel)]="DOb" #DOB="ngModel"
+          <input class="form-control" id="DOB" type="date" placeholder="Enter DOB" [(ngModel)]="dob" #DOB="ngModel"
             name="dob" required>
+          </div>
           <div *ngIf="Fathername.invalid && (DOB.dirty || DOB.touched)" class="alert alert-danger">
             <div *ngIf="Fathername.errors.required">required</div>
           </div>
-        </div>
+        
         <div class="col-md-4">
           <label for="email" class="control-lable"><strong>Email:</strong></label>
           <input type="text" class="form-control" name="email" placeholder="enter email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email" [(ngModel)]="Email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email" [(ngModel)]="email"
             #emailref="ngModel" required>
           <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class="alert alert-danger">
             <div *ngIf="Fathername.errors.required">Please enter Email </div>
@@ -74,7 +76,7 @@
         <div class="col-md-4">
           <label for="Mobile" class="control-label"> <strong>Mobile number:</strong></label>
           <input type="number" class="form-control" name="mobileNumber" placeholder="Mobile number" id="Mobile"
-            [(ngModel)]="Mobile" #mobile="ngModel" minlength="10" maxlength="10" required>
+            [(ngModel)]="mobileNumber" #mobile="ngModel" minlength="10" maxlength="10" required>
 
           <div *ngIf="mobile.errors &&(mobile.touched || mobile.dirty)" class="alert alert-danger">
             <div *ngIf="mobile.errors.required">Enter Mobile Number</div>
@@ -98,7 +100,7 @@
 
         <div class="col-md-4">
           <label for="plot" class="control-label"><strong>Area, Colony, Street, Sector, Village</strong></label>
-          <input type="text" name="village" class="form-control" id="plot" [(ngModel)]="Plot" #plot="ngModel" required>
+          <input type="text" name="village" class="form-control" id="plot" [(ngModel)]="village" #plot="ngModel" required>
 
           <div *ngIf="plot.errors && (plot.touched || plot.dirty)" class="alert alert-danger">
             <div *ngIf="plot.errors.required">Required</div>
@@ -108,9 +110,9 @@
 
       <div class="row">
         <div class="col-md-4">
-          <label for="District" class="control-label"><strong>District</strong></label>
-          <input type="text" class="form-control" placeholder="District" name="District" id="District"
-            [(ngModel)]="dist" #District="ngModel" required>
+          <label for="District" class="control-label"><strong>city</strong></label>
+          <input type="text" class="form-control" placeholder="District" name="city" id="District"
+            [(ngModel)]="city" #District="ngModel" required>
           <div *ngIf="District.errors && (District.touched || District.dirty)" class="alert alert-danger">
             <div *ngIf="District.errors.required">district is required</div>
           </div>
@@ -118,7 +120,7 @@
 
         <div class="col-md-4">
           <label for="pincode" class="control-label"><strong>Pincode</strong></label>
-          <input type="text" class="form-control" placeholder="Pincode" id="pincode" name="pincode" [(ngModel)]="pin"
+          <input type="text" class="form-control" placeholder="Pincode" id="pincode" name="pinCode" [(ngModel)]="pinCode"
             #pincode="ngModel" required minlength="6" maxlength="6">
           <div *ngIf="pincode.errors && (pincode.touched || pincode.dirty || pincode.minlength)"
             class="alert alert-danger">
@@ -131,8 +133,7 @@
         <div class="col-md-4">
           <label for="password" class="control-label"><strong>Password:</strong></label>
           <input class="form-control" type="password" id="password" name="password" [(ngModel)]="pswd"
-            #password="ngModel" placeholder="enter password" name="password" required minlength="9"
-            pattern="[0-9,A-Z,a-z]">
+            #password="ngModel" placeholder="enter password" name="password" required minlength="9">
           <div *ngIf="password.errors &&(password.touched || password.dirty || password.minlength)"
             class="alert alert-danger">
             <div *ngIf="password.touched">Password Required</div>
@@ -142,7 +143,7 @@
         <div class="col-md-4">
           <label for="password" class="control-label"><strong>Confirm Password:</strong></label>
           <input class="form-control" type="password" id="cpassword" [(ngModel)]="cpswd" #cpassword="ngModel"
-            placeholder="Confirm password" name="cpassword" required minlength="9" pattern="[0-9,A-Z,a-z]">
+            placeholder="Confirm password" name="cpassword" required minlength="9">
           <div *ngIf="cpassword.errors &&(cpassword.touched || cpassword.dirty ||cpassword.minlength)"
             class="alert alert-danger">
             <div *ngIf="cpassword.touched">Password Required</div>
@@ -157,7 +158,7 @@
           <a href="/login" class="btn btn-primary mt-5 mr-5" role="button">Signin Instead</a>
         </div>
         <div class="container m-5 col-md-4">
-          <button type="button" class="btn btn-primary mt-5" [disabled]="!RegistrationForm.form.valid">Register</button>
+          <button type="button" class="btn btn-primary mt-5" [disabled]="!RegistrationForm.form.valid" (click)="regdtls()">Register</button>
         </div>
       </div>
     </div>
