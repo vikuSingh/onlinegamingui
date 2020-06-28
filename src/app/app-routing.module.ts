@@ -10,9 +10,8 @@ import { BillingComponent } from './billing/billing.component';
 import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
 import { ContactComponent } from './contact/contact.component';
 import { EventComponent } from './event/event.component';
-import { PackageComponent } from './package/package.component';
 import { AboutComponent } from './about/about.component';
-
+import { SidenavComponent} from'./sidenav/sidenav.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/login",pathMatch: 'full'},
@@ -26,8 +25,8 @@ const routes: Routes = [
   {path:"employee",component:EmployeeRegistrationComponent},
   {path:"event",component:EventComponent},
   {path:"contact",component:ContactComponent},
-  {path:"package",component:PackageComponent},
-  {path:"about",component:AboutComponent}
+  {path:"about",component:AboutComponent},
+  {path:"sidenav",component:SidenavComponent}
 ];
 
 @NgModule({

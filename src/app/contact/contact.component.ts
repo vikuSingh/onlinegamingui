@@ -11,6 +11,7 @@ export class ContactComponent implements OnInit {
 
   contact : Contact = new Contact();
   response : any;
+  selectedValue: any;
   firstName: string;
   lastName: string;
   mobileNo: string;
@@ -19,11 +20,18 @@ export class ContactComponent implements OnInit {
   constructor(private contactService:ContactService) { }
 
   ngOnInit() {
-  }
 
+  }
+  //event handler for the select element's change event
+  selectChangeHandler (event: any) {
+    //update the ui
+    this.country = event.target.value;
+  }
   public addContact() {
     this.contact.firstName = this.firstName;
     this.contact.lastName = this.lastName;
+    this.contact.mobileNo = this.mobileNo;
+    this.contact.country = this.country;
     this.contact.subject = this.subject;
     console.log(this.contact);
     this.contactService.saveContact(this.contact).subscribe(

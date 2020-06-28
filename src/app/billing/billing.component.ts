@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
+import { Cart } from '../cart';
+import { Billing } from '../billing';
+import { BillingService } from '../billing.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-billing',
@@ -7,9 +12,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillingComponent implements OnInit {
 
-  constructor() { }
+  
+  billing : Billing = new Billing();
+  response : any;
+  firstName : string;
+  lastName : string;
+  city : string;
+  pinCode : string;
+  email : string;
+  phoneNo : number;
+  product : string;
+  price :number;
+  subTotal :number;
+  total :number;
+
+
+  constructor(private billingService :BillingService) { }
+
+  
 
   ngOnInit() {
+        
+    
+  }
+
+  public saveBilling(){
+    this.billing.firstName=this.firstName;
+    this.billing.lastName=this.lastName;
+    this.billing.city=this.city;
+    this.billing.pinCode=this.pinCode;
+    this.billing.email=this.email;
+    this.billing.phoneNo=this.phoneNo;
+    this.billing.product=this.product;
+    this.billing.price=this.price;
+    this.billing.subTotal=this.subTotal;
+    this.billing.total=this.total;
+
+    
+
+    this.billingService.saveBilling(this.billing).subscribe(
+      data =>{
+        this.response=data;
+        
+        console.log(data);
+      },
+
+      error => console.log(error)
+    );
+
+
   }
 
 }

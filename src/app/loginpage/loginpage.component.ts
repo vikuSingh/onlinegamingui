@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { dependenciesFromGlobalMetadata } from '@angular/compiler/src/render3/r3_factory';
 import { Login } from '../login';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginpage',
@@ -11,21 +11,25 @@ import { LoginService } from '../login.service';
 export class LoginpageComponent implements OnInit {
   login:Login=new Login();
    response:any;
-   username:string;
+   email:string;
    password:string;
 
-  constructor(private loginservice:LoginService) { }
+  constructor(private loginservice:LoginService,private router: Router) { }
 
   ngOnInit() {
   }
   public getLogin(){
-    this.login.username=this.username;
+    this.login.email=this.email;
     this.login.password=this.password;
     console.log(this.login);
     this.loginservice.getLogin(this.login).subscribe(
       data=> {
         this.response = data; 
-        console.log(data) 
+        if (this.response==true) {
+          this.router.navigateByUrl('/sidenav');
+        }else {
+           
+        } 
       },
       error => console.log(error));
   }

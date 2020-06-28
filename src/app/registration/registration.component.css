@@ -1,0 +1,24 @@
+.bg{
+    background-image: url("src\assets\Login\Loginbackground.jpg");
+    background-size: cover;
+    height: 790px;
+    width: 700pxpx;
+}
+
+.body{
+     float: right;
+ }
+ .register{
+     float: right;
+ }
+ 
+ .form{
+    
+     width: 650px;
+     margin-left: 30%;
+     
+ }
+ .textarea{
+     width: 530px;
+     height: 100px;
+ }
