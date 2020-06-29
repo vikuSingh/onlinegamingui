@@ -13,6 +13,7 @@ export class LoginpageComponent implements OnInit {
    response:any;
    email:string;
    password:string;
+   errormsg:string;
 
   constructor(private loginservice:LoginService,private router: Router) { }
 
@@ -28,7 +29,8 @@ export class LoginpageComponent implements OnInit {
         if (this.response==true) {
           this.router.navigateByUrl('/sidenav');
         }else {
-           
+          this.errormsg="INVALID USERNAME AND PASSWORD..!";
+          console.log(this.errormsg)
         } 
       },
       error => console.log(error));
