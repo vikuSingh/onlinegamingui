@@ -27,11 +27,12 @@
           <label class="control-label " for="FatherName"><strong>Father Name:</strong></label>
           <input type="text" class="form-control" id="FatherName" placeholder="Enter Father Name" name="fatherName"
             [(ngModel)]="fatherName" #Fathername="ngModel" required minlength="3">
-          </div>
+         
           <div *ngIf="Fathername.invalid && (Fathername.dirty || Fathername.touched)" class="alert alert-danger">
             <div *ngIf="Fathername.errors.required">name is required</div>
             <div class="errorMsg" *ngIf="fname.errors.minlength">Should be atleast 3 characters</div>
           </div>
+        </div>
         
 
       </div>
@@ -40,10 +41,11 @@
           <label class="control-label" for="DOB"><strong>Date Of Birth:</strong></label>
           <input class="form-control" id="DOB" type="date" placeholder="Enter DOB" [(ngModel)]="dob" #DOB="ngModel"
             name="dob" required>
-          </div>
+          
           <div *ngIf="Fathername.invalid && (DOB.dirty || DOB.touched)" class="alert alert-danger">
             <div *ngIf="Fathername.errors.required">required</div>
           </div>
+        </div>
         
         <div class="col-md-4">
           <label for="email" class="control-lable"><strong>Email:</strong></label>
