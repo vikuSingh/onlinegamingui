@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container">
     <form action="action_page">
   
@@ -7,11 +8,12 @@
       <input type="text" id="lastName" name="lastName" placeholder="last name.." [(ngModel)] = "lastName">
   
       <select id="country" name="country" (change)="selectChangeHandler($event)" >
+        <option value="0 selected disabled">select country</option>
         <option value="India">India</option>
         <option value="Canada">Canada</option>
         <option value="Usa">USA</option>
       </select>
-      <p><span>You selected: </span><b>{{country}}</b></p>
+      <!-- <p><span>You selected: </span><b>{{country}}</b></p> -->
 
 
       <input type="text" id="mobileNo" name="mobileNo" placeholder="mobile no.." [(ngModel)]="mobileNo">

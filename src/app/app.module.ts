@@ -17,6 +17,7 @@ import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { HeaderComponent } from './header/header.component';
  
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     EventComponent,
     AboutComponent,
     ContactComponent,
-    SidenavComponent
+    SidenavComponent,
+    HeaderComponent
 
   ],
   imports: [

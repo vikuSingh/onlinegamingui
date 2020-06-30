@@ -8,13 +8,13 @@
   }
   
     
-  .topnav {
+  /* .navbar {
     overflow: hidden;
     background-color:#007bff;
     
   }
   
-  .topnav a {
+  .navbar a {
     float: left;
     color: #000000;
     text-align: center;
@@ -24,16 +24,16 @@
     
   }
   
-  .topnav a:hover {
+  .navbar a:hover {
     background-color: #FFFFFF;
     color:black;
   }
   
-  .topnav a.active {
+  .navbar a.active {
     background-color: #000000;
     color: white;
     
-  }
+  } */
   form{
 	position: absolute;
     right: 40px;
