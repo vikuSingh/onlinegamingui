@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Registration } from '../registration';
 import { RegistrationService } from '../registration.service';
+import { RouterEvent, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -23,7 +24,7 @@ export class RegistrationComponent implements OnInit {
 	mobileNumber:string;
 	password:string;
 
-  constructor( private registrationServise:RegistrationService) {
+  constructor( private registrationServise:RegistrationService,private router: Router) {
   }
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class RegistrationComponent implements OnInit {
 
   
   public regdtls() {
+    alert("submitted successfully");
     this.registration.fullName = this.fullName;
     this.registration.fatherName = this.fatherName;
     this.registration.email = this.email;
@@ -43,6 +45,7 @@ export class RegistrationComponent implements OnInit {
     this.registration.mobileNumber=this.mobileNumber;
     this.registration.password=this.password;
     console.log(this.registration);
+    this.router.navigateByUrl('/login');
     this.registrationServise.regdtls(this.registration).subscribe(
       data=> {
         this.response = data; 

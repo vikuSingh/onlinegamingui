@@ -1,8 +1,12 @@
 .bg{
-    background-image: url("src\assets\Login\Loginbackground.jpg");
+    color: white;
+    /* background-image: url("src\assets\Login\Loginbackground.jpg"); */
+    /* background-image: url("src\assets\images\registerbg.png"); */
+    background-image: url("src\assets\images\2121757.jpg");
     background-size: cover;
-    height: 790px;
-    width: 700pxpx;
+    height: auto;
+    /* width: 700px; */
+    max-width: 100%;
 }
 
 .body{
@@ -21,4 +25,8 @@
  .textarea{
      width: 530px;
      height: 100px;
+ }
+
+ .msg{
+     background-color: transparent;
  }
