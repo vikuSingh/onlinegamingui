@@ -1,0 +1,206 @@
+<div class="ml-5">
+    <div class="ml-5">
+    <div class="ml-5">
+    <div class="ml-5">
+    <div class="ml-5">
+     <app-header></app-header>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+      <div class="d-flex menu-list" id="wrapper" >
+          <div class="bg-primary border-right" id="sidebar-wrapper"style="margin-top:-58px;">
+              <div class="dem list-group list-group-flush">
+                <ul style="list-style-type:none;">
+                <img src="assets/images/imag11.jpg">
+                <hr>
+                <a (click)="myphoto()" class="list-group-item  bg-primary text-white">My Photo</a>
+                  <a (click)="profile()" class="list-group-item list-group-item-action bg-primary text-white">View Profile</a>
+                  <a (click)="location()" class="list-group-item list-group-item-action bg-primary text-white">Location</a>
+                  
+                  <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a (click)="order()"data-toggle="collapse" data-target="#service" class="collapsed" 
+                  class="list-group-item list-group-item-action bg-primary text-white">Order <span class="glyphicon glyphicon-menu-down"></span></a>
+                 </li>
+                  <ul class="sub-menu collapse" id="products" style="list-style-type:none; margin: 0px;">
+                    
+                     <li><a (click)="vieworder()" class="list-group-item list-group-item-action bg-primary text-white">View-Order</a></li>
+                     <li><a (click)="updateorder()" class="list-group-item list-group-item-action bg-primary text-white">updateorder</a></li>
+                     <li><a (click)="cancelorder()" class="list-group-item list-group-item-action bg-primary text-white">Cancel-Order</a></li>
+                     </ul>
+    
+    
+                     <li data-toggle="collapse" data-target="#service" class="collapsed active">
+                   <a (click)="hist()"data-toggle="collapse" data-target="#service" 
+                   class="collapsed" class="list-group-item list-group-item-action
+                    bg-primary text-white">History <span class="glyphicon glyphicon-menu-down"></span></a>
+                    </li>
+                  <ul class="sub-menu collapse" id="service" style="list-style-type:none;">
+                    
+                     <li><a (click)="viewhi()" class="list-group-item list-group-item-action bg-primary text-white">View-history</a></li>
+                     <li><a (click)="deletehi()" class="list-group-item list-group-item-action bg-primary text-white">Delete-History</a></li>
+                     </ul>
+    
+                     </ul>
+    
+              </div>
+                </div>
+    
+              <div class="container-fluid">
+                <div class="my" *ngIf="my">
+        
+                  <h1 class="mt-4"><img src="assets/images/imag11.jpg" class="img-responsive bg-primary" alt=""> </h1>
+              </div>
+                <div class="html" *ngIf="html">
+                    <h1 class="mt-4"><div class="container">
+                      <div class="row profile">
+                      <div class="col-md-3">
+                        <div class="profile-sidebar border-right">
+                        
+                          <div class="profile-userpic text-center">
+                            <img src="assets/images/imag11.jpg" class="img-responsive bg-primary" alt="">
+                          </div>
+                          
+                          <div class="profile-usertitle">
+                            <div class="profile-usertitle-name">
+                              integra
+                            </div>
+                            <div class="profile-usertitle-job">
+                              Developer
+                            </div>
+                          </div>
+                          
+                          <div class="profile-userbuttons">
+                           <a href="assests/app/employee-registration.component.html"> 
+                            <button type="button" class="btn btn-success btn-sm">Employee</button></a>
+                           
+                           <a href="app\registration\registration.component.html"> 
+                             <button type="button" class="btn btn-success btn-sm">Registration</button></a>
+                           
+                           
+                          </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                
+                 
+                  <br></h1>
+                </div>
+                <div class="introductiontohtml" *ngIf="introductiontohtml">
+        
+                    
+                </div>
+                <div class="htmleditor" *ngIf="htmleditor">
+        
+                  <h5 class="mt-4"><div class="container-xl">
+                    <div class="table-responsive">
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h2>Order <b>Details</b></h2>
+                                    </div>
+                                    <div class="col-sm-8">						
+                                        <a href="#" class="btn btn-primary"><i class="material-icons">&#xE863;</i> <span>Refresh List</span></a>
+                                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-filter">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="show-entries">
+                                            <span>Show</span>
+                                            <select class="form-control">
+                                                <option>5</option>
+                                                <option>10</option>
+                                                <option>15</option>
+                                                <option>20</option>
+                                            </select>
+                                            <span>entries</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                        <div class="filter-group">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="filter-group">
+                                            <label>Location</label>
+                                            <select class="form-control">
+                                                <option>All</option>
+                                                <option>Berlin</option>
+                                                <option>London</option>
+                                                <option>Madrid</option>
+                                                <option>New York</option>
+                                                <option>Paris</option>								
+                                            </select>
+                                        </div>
+                                        <div class="filter-group">
+                                            <label>Status</label>
+                                            <select class="form-control">
+                                                <option>Any</option>
+                                                <option>Delivered</option>
+                                                <option>Shipped</option>
+                                                <option>Pending</option>
+                                                <option>Cancelled</option>
+                                            </select>
+                                        </div>
+                                        <span class="filter-icon"><i class="fa fa-filter"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Customer</th>
+                                        <th>Location</th>
+                                        <th>Order Date</th>						
+                                        <th>Status</th>						
+                                        <th>Net Amount</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                </tbody>
+                            </table>
+                                               </div>
+                    </div>        
+                </div>     
+                </h5>
+                </div>
+                <div class="htmlbasic" *ngIf="htmlbasic">
+        
+                    <h1 class="mt-4 text-center">vieworder </h1>
+                </div>
+                <div class="htmlelement" *ngIf="htmlelement">
+        
+                    <h1 class="mt-4 text-center">Update order </h1>
+                </div>
+                <div class="cancel" *ngIf="cancel">
+        
+                  <h1 class="mt-4 text-center">Cancel order </h1>
+                  </div>
+                  <div class="history" *ngIf="history">
+        
+                    <h1 class="mt-4 text-center">History </h1>
+                    </div>
+    
+                    <div class="viewhistory" *ngIf="viewhistory">
+        
+                      <h1 class="mt-4 text-center">View-history </h1>
+                    </div>
+    
+                      <div class="deletehistory" *ngIf="deletehistory">
+        
+                        <h1 class="mt-4 text-center">Deletehistory </h1>
+                      </div>
+                    </div>
+                  </div>
+    

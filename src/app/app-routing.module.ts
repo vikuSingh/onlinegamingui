@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { SidenavComponent} from'./sidenav/sidenav.component';
+import { SideComponent } from './side/side.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/login",pathMatch: 'full'},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"event",component:EventComponent},
   {path:"contact",component:ContactComponent},
   {path:"about",component:AboutComponent},
-  {path:"sidenav",component:SidenavComponent}
+  {path:"sidenav",component:SidenavComponent},
+  {path:"side",component:SideComponent}
 ];
 
 @NgModule({
