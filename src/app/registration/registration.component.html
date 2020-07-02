@@ -6,7 +6,7 @@
   <form #RegistrationForm="ngForm">
     <div class="container mr-5">
       <div class="row mt-5">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-md-4">
           <div class="form-group">
             <label class="control-label" for="Fullname"
               ><strong>Full Name:</strong></label
@@ -17,25 +17,25 @@
               class="form-control"
               id="FullName"
               placeholder="Enter Full Name"
-              name="firstName"
-              [(ngModel)]="firstName"
+              name="fullName"
+              [(ngModel)]="fullName"
               #fname="ngModel"
               required
               minlength="3"
             />
-          </div>
 
-          <div
-            *ngIf="
-              fname.invalid && (fname.dirty || fname.touched) && fname.invalid
-            "
-            class="alert alert-danger"
-          >
-            <div class="errorMsg" *ngIf="fname.errors.required">
-              FirstName is required
-            </div>
-            <div class="errorMsg" *ngIf="fname.errors.minlength">
-              Should be atleast 3 characters
+            <div
+              *ngIf="
+                fname.invalid && (fname.dirty || fname.touched) && fname.invalid
+              "
+              class="alerts"
+            >
+              <div class="errorMsg" *ngIf="fname.errors.required">
+                required
+              </div>
+              <div class="errorMsg" *ngIf="fname.errors.minlength">
+                Should be at least 3 characters
+              </div>
             </div>
           </div>
         </div>
@@ -60,9 +60,9 @@
             *ngIf="
               Fathername.invalid && (Fathername.dirty || Fathername.touched)
             "
-            class="alert alert-danger"
+            class="alerts"
           >
-            <div *ngIf="Fathername.errors.required">name is required</div>
+            <div *ngIf="Fathername.errors.required">required</div>
             <div class="errorMsg" *ngIf="fname.errors.minlength">
               Should be atleast 3 characters
             </div>
@@ -85,11 +85,8 @@
             required
           />
 
-          <div style="color: red;" 
-            *ngIf="DOB.invalid && (DOB.dirty || DOB.touched)"
-            class="alert"
-          >
-            <div style="line-height: 0.5px;" *ngIf="Fathername.errors.required">required</div>
+          <div *ngIf="DOB.invalid && (DOB.dirty || DOB.touched)" class="alerts">
+            <div *ngIf="DOB.errors.required">required</div>
           </div>
         </div>
 
@@ -111,11 +108,11 @@
           />
           <div
             *ngIf="emailref.errors && (emailref.touched || emailref.dirty)"
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="emailref.errors.required">Please enter Email</div>
             <div [hidden]="!emailref.errors?.pattern">
-              Invalid pattern
+              please enter a valid email
             </div>
           </div>
         </div>
@@ -133,17 +130,16 @@
             id="gender"
             [(ngModel)]="gender"
             #Gender="ngModel"
-            
           >
             <!-- <option  selected>Select your Gender</option> -->
-           <option disabled> select your gender</option>
-            <option value="1">Men</option>
-            <option value="2">Women</option>
-            <option value="3">Custom</option>
+            <option disabled> select your gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Custom">Custom</option>
           </select>
           <div
             *ngIf="Gender.errors && (Gender.touched || Gender.dirty)"
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="Gender.errors.required">Select gender</div>
           </div>
@@ -153,7 +149,7 @@
             <strong>Mobile number:</strong></label
           >
           <input
-            type="number"
+            type="tel"
             class="form-control"
             name="mobileNumber"
             placeholder="Mobile number"
@@ -167,7 +163,7 @@
 
           <div
             *ngIf="mobile.errors && (mobile.touched || mobile.dirty)"
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="mobile.errors.required">Enter Mobile Number</div>
             <div class="errorMsg" *ngIf="mobile.errors.minlength">
@@ -197,7 +193,7 @@
 
           <div
             *ngIf="Address.errors && (Address.touched || Address.dirty)"
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="Address.errors.required">Please Enter Your Address</div>
           </div>
@@ -219,7 +215,7 @@
 
           <div
             *ngIf="plot.errors && (plot.touched || plot.dirty)"
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="plot.errors.required">Required</div>
           </div>
@@ -243,7 +239,7 @@
           />
           <div
             *ngIf="District.errors && (District.touched || District.dirty)"
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="District.errors.required">district is required</div>
           </div>
@@ -270,7 +266,7 @@
               pincode.errors &&
               (pincode.touched || pincode.dirty || pincode.minlength)
             "
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="pincode.errors.required">pincode required</div>
             <div *ngIf="pincode.errors.minlength">pincode incorrect</div>
@@ -287,31 +283,31 @@
             type="password"
             id="password"
             name="password"
-            [(ngModel)]="pswd"
-            #password="ngModel"
+            [(ngModel)]="password"
+            #pswd="ngModel"
             placeholder="enter password"
-            name="password"
             required
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           />
-          <small> Must contain at least one number and one uppercase and lowercase
-            letter, and at least 8 or more characters.</small>
+          <small>
+            Must contain at least one number and one uppercase and lowercase
+            letter, and at least 8 or more characters.</small
+          >
           <div
             *ngIf="
-              password.errors &&
+              pswd.errors &&
               (RegistrationForm.submitted ||
-                password.touched ||
-                password.dirty ||
-                password.minlength)
+                pswd.touched ||
+                pswd.dirty ||
+                pswd.minlength)
             "
-            class="alert alert-danger"
+            class="alerts"
           >
-            <small *ngIf="password.errors.pattern">
-              Must contain at least one number and one uppercase and lowercase
-              letter, and at least 8 or more characters.
-            </small><br>
-            <small>{{ password.value }}</small>
-            <div *ngIf="password.touched">Password Required</div>
+            <small *ngIf="pswd.errors.pattern">
+              Choose a strong Password. </small
+            ><br />
+            <small>{{ pswd.value }}</small>
+            <div *ngIf="pswd.touched">Password Required</div>
           </div>
         </div>
         <div class="col-md-4">
@@ -327,7 +323,7 @@
             placeholder="Confirm password"
             name="cpassword"
             required
-            pattern="{{ password.value }}"
+            pattern="{{ pswd.value }}"
           />
           <div
             *ngIf="
@@ -336,22 +332,18 @@
                 cpassword.touched ||
                 cpassword.dirty)
             "
-            class="alert alert-danger"
+            class="alerts"
           >
             <div *ngIf="cpassword.errors.touched">Password Required</div>
             <div *ngIf="cpassword.errors.pattern">Password Miss Match</div>
-            <small>{{ cpassword.value }}</small><br>
-            <small>{{ password.value }}</small>
+            <small>{{ cpassword.value }}</small
+            ><br />
+            <small>{{ pswd.value }}</small>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="container m-5 col-md-4">
-          <a href="/login" class="btn btn-primary mt-5 mr-5" role="button"
-            >Signin Instead</a
-          >
-        </div>
-        <div class="container m-5 col-md-4">
+        <div class="container m-2 col-md-4">
           <button
             type="button"
             class="btn btn-primary mt-5"
@@ -360,7 +352,14 @@
           >
             Register
           </button>
+          &nbsp;
+          <a href="/login" class="btn btn-primary mt-5 mr-5" role="button"
+            >Signin Instead</a
+          >
         </div>
+        <!-- <div class="container m-5 col-md-4"> -->
+
+        <!-- </div> -->
       </div>
     </div>
   </form>
