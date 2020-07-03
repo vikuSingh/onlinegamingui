@@ -32,11 +32,7 @@ export class ForgotpasswordComponent implements OnInit {
         this.response = data; 
         if (this.response==true) {
           this.Router.navigateByUrl('/login');
-        }else {
-          this.errormsg="PASSWORD NOT MATCHED..!";
-          console.log(this.errormsg)
-        console.log(data) 
-      }
+        }
     },
       error => console.log(error));
     }
