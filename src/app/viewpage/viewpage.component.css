@@ -1,14 +1,16 @@
 
-  .container {
+/*   .container {
     position: absolute;
     margin: 20px;
     width: auto;
-    }
+    height: auto;
+    } */
     
   form{
 	position: absolute;
-    right: 40px;
+   /*  right: 40px; */
     top: 6px;
+    height: 90%;
 }
 
    
