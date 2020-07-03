@@ -1,9 +1,19 @@
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
+.container{
+  padding-right: 5%;
+}
 
+ /* #firstName{
+
+  margin-top: 10%;
+ }  */    
+
+
+input[type=text], select, textarea {
+    
     width: 100%; /* Full width */
     height: 100%;
-    padding: 8px; /* Some padding */ 
+    padding: 7px; /* Some padding */ 
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */

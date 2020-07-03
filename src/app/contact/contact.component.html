@@ -1,16 +1,18 @@
-<app-side></app-side>
-<div class="container mt-5">
+ <div>
+   <app-side></app-side>
+ </div>
+<!-- <div class="container mt-5"> -->
 <div class="container ml-5">
 <div class="container ml-5">
   <div class="container ml-5">
     <div class="container ml-5">
-
-    <form action="action_page">
-  
-      <input type="text" id="firstName" name="firstName" placeholder="firstname name.." [(ngModel)]="firstName">
+    <div class="container">
+    
+      <form action="action_page"><br><br>
+    
+<input type="text" id="firstName" name="firstName" placeholder="firstname name.." [(ngModel)]="firstName" class="mt-5 mt-5">
       
-
-      <input type="text" id="lastName" name="lastName" placeholder="last name.." [(ngModel)] = "lastName">
+ <input type="text" id="lastName" name="lastName" placeholder="last name.." [(ngModel)] = "lastName">
   
       <select id="country" name="country" (change)="selectChangeHandler($event)" >
         <option value="0 selected disabled">select country</option>
@@ -27,8 +29,10 @@
       <input type="submit" value="Submit" (click)="addContact()">
   
     </form>
+  
   </div>
   </div>
 </div>
 </div>
 </div>
+<!-- </div> -->

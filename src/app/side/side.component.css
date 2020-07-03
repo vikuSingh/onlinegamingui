@@ -1,7 +1,12 @@
 
    body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+  
 }
+/* #wrapper{
+
+  margin-right: 40px;
+} */
 
 #sidebar-wrapper {
   
