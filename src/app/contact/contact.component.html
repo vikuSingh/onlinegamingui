@@ -4,9 +4,75 @@
  <div id="page-content-wrapper">
      <app-navbar></app-navbar>
      <div class="container-fluid">
-         <h1 class="mt-4">Simple Sidebar</h1>
+         <h1 class="mt-4 mr-5 head"> Contact Us</h1>
             
-            Write your code here.....!
+         <form #contactUsForm="ngForm">
+            <div class="container mr-5">
+              <div class="row mt-5">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="control-label" for="Fullname"
+                      ><strong>Full Name:</strong></label
+                    >
+        
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FullName"
+                      placeholder="Enter Full Name"
+                      name="fullName"
+                      [(ngModel)]="fullName"
+                      #fname="ngModel"
+                      required
+                    />
+        
+                    <div
+                      *ngIf="
+                        fname.invalid && (fname.dirty || fname.touched) && fname.invalid
+                      "
+                      class="alerts"
+                    >
+                      <div class="errorMsg" *ngIf="fname.errors.required">
+                        required
+                      </div>
+                     <!--  <div class="errorMsg" *ngIf="fname.errors.minlength">
+                        Should be at least 3 characters
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="form-group col-md-4">
+                  <label class="control-label" for="FatherName"
+                    ><strong>Father Name:</strong></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="FatherName"
+                    placeholder="Enter Father Name"
+                    name="fatherName"
+                    [(ngModel)]="fatherName"
+                    #Fathername="ngModel"
+                    required
+                  />
+        
+                  <div
+                    *ngIf="
+                      Fathername.invalid && (Fathername.dirty || Fathername.touched)
+                    "
+                    class="alerts"
+                  >
+                    <div *ngIf="Fathername.errors.required">required</div>
+                    <!-- <div class="errorMsg" *ngIf="fname.errors.minlength">
+                      Should be atleast 3 characters
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              </div>
+              
+              </form>
 
      </div>
  </div>
