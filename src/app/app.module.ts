@@ -16,9 +16,9 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { HeaderComponent } from './header/header.component';
-import { SideComponent } from './side/side.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+
  
 
 @NgModule({
@@ -35,11 +35,9 @@ import { SideComponent } from './side/side.component';
     EventComponent,
     AboutComponent,
     ContactComponent,
-    SidenavComponent,
-    HeaderComponent,
-    SideComponent
-
-  ],
+    NavbarComponent,
+    SidebarComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
