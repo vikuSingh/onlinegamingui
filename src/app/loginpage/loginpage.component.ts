@@ -14,7 +14,7 @@ export class LoginpageComponent implements OnInit {
    email:string;
    password:string;
    errormsg:string;
-
+   errorMsg:boolean;
   constructor(private loginservice:LoginService,private router: Router) { }
 
   ngOnInit() {
@@ -22,23 +22,17 @@ export class LoginpageComponent implements OnInit {
   public getLogin(){
     this.login.email=this.email;
     this.login.password=this.password;
-    console.log(this.login);
     this.loginservice.getLogin(this.login).subscribe(
       data=> {
         this.response = data; 
         if (this.response==true) {
-          this.router.navigateByUrl('/sidenav');
+          this.router.navigateByUrl('/gallery');
         }else {
           this.errormsg="INVALID USERNAME AND PASSWORD..!";
-          console.log(this.errormsg)
+          this.errorMsg = true;
         } 
       },
       error => console.log(error));
   }
-  forgot(){
-    console.log("button click");
-    document.getElementById("testing");
-
-    }
   } 
 
