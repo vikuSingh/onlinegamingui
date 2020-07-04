@@ -1,370 +1,203 @@
 <div class="container-fluid">
   <div class="row">
-    <div  class="bg col-sm-12 col-md-12 col-lg-12 col-xl-12"> 
-  
- <div class="container">
-    <h3 style="text-align: center;">Register Here</h3>
-    <hr style="background-color: black;" />
-  </div>
-  <form #RegistrationForm="ngForm">
-    <div class="container mr-5">
-      <div class="row mt-5">
-        <div class="col-md-4">
-          <div class="form-group">
-            <label class="control-label" for="Fullname"
-              ><strong>Full Name:</strong></label
-            >
+    <div class="bg col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
-            <input
-              type="text"
-              class="form-control"
-              id="FullName"
-              placeholder="Enter Full Name"
-              name="fullName"
-              [(ngModel)]="fullName"
-              #fname="ngModel"
-              required
-            />
+      <div class="container">
+        <h3 style="text-align: center;">Register Here</h3>
+        <hr style="background-color: black;" />
+      </div>
+      <form #RegistrationForm="ngForm">
+        <div class="container mr-5">
+          <div class="row mt-5">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label" for="Fullname"><strong>Full Name:</strong></label>
 
-            <div
-              *ngIf="
+                <input type="text" class="form-control" id="FullName" placeholder="Enter Full Name" name="fullName"
+                  [(ngModel)]="fullName" #fname="ngModel" required />
+
+                <div *ngIf="
                 fname.invalid && (fname.dirty || fname.touched) && fname.invalid
-              "
-              class="alerts"
-            >
-              <div class="errorMsg" *ngIf="fname.errors.required">
-                required
-              </div>
-             <!--  <div class="errorMsg" *ngIf="fname.errors.minlength">
+              " class="alerts">
+                  <div class="errorMsg" *ngIf="fname.errors.required">
+                    required
+                  </div>
+                  <!--  <div class="errorMsg" *ngIf="fname.errors.minlength">
                 Should be at least 3 characters
               </div> -->
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="form-group col-md-4">
-          <label class="control-label" for="FatherName"
-            ><strong>Father Name:</strong></label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="FatherName"
-            placeholder="Enter Father Name"
-            name="fatherName"
-            [(ngModel)]="fatherName"
-            #Fathername="ngModel"
-            required
-          />
+            <div class="form-group col-md-4">
+              <label class="control-label" for="FatherName"><strong>Father Name:</strong></label>
+              <input type="text" class="form-control" id="FatherName" placeholder="Enter Father Name" name="fatherName"
+                [(ngModel)]="fatherName" #Fathername="ngModel" required />
 
-          <div
-            *ngIf="
+              <div *ngIf="
               Fathername.invalid && (Fathername.dirty || Fathername.touched)
-            "
-            class="alerts"
-          >
-            <div *ngIf="Fathername.errors.required">required</div>
-            <!-- <div class="errorMsg" *ngIf="fname.errors.minlength">
+            " class="alerts">
+                <div *ngIf="Fathername.errors.required">required</div>
+                <!-- <div class="errorMsg" *ngIf="fname.errors.minlength">
               Should be atleast 3 characters
             </div> -->
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 form-group">
-          <label class="control-label" for="DOB"
-            ><strong>Date Of Birth:</strong></label
-          >
-          <input
-            class="form-control"
-            id="DOB"
-            type="date"
-            placeholder="Enter DOB"
-            [(ngModel)]="dob"
-            #DOB="ngModel"
-            name="dob"
-            required
-          />
-
-          <div *ngIf="DOB.invalid && (DOB.dirty || DOB.touched)" class="alerts">
-            <div *ngIf="DOB.errors.required">required</div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <label for="email" class="control-lable"
-            ><strong>Email:</strong></label
-          >
-          <input
-            type="text"
-            class="form-control"
-            name="email"
-            placeholder="enter email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-            id="email"
-            name="email"
-            [(ngModel)]="email"
-            #emailref="ngModel"
-            required
-          />
-          <div
-            *ngIf="emailref.errors && (emailref.touched || emailref.dirty)"
-            class="alerts"
-          >
-            <div *ngIf="emailref.errors.required">Please enter Email</div>
-            <div [hidden]="!emailref.errors?.pattern">
-              please enter a valid email
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <label class="control-label" for="DOB"><strong>Date Of Birth:</strong></label>
+              <input class="form-control" id="DOB" type="date" placeholder="Enter DOB" [(ngModel)]="dob" #DOB="ngModel"
+                name="dob" required />
 
-      <div class="row">
-        <div class="col-md-4">
-          <label for="gender" class="control-label"
-            ><strong>Gender:</strong></label
-          >
-          <select
-            class="custom-select gender form-control"
-            name="gender"
-            required
-            id="gender"
-            [(ngModel)]="gender"
-            #Gender="ngModel"
-          >
-            <option disabled selected> Select your Gender </option>
-            <!-- <option disabled> select your gender</option> -->
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Custom">Custom</option>
-          </select>
-          <div
-            *ngIf="Gender.errors && (Gender.touched || Gender.dirty)"
-            class="alerts"
-          >
-            <div *ngIf="Gender.errors.required">Select gender</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="Mobile" class="control-label">
-            <strong>Mobile number:</strong></label
-          >
-          <input
-            type="tel"
-            class="form-control"
-            name="mobileNumber"
-            placeholder="Mobile number"
-            id="Mobile"
-            [(ngModel)]="mobileNumber"
-            #mobile="ngModel"
-            minlength="10"
-            maxlength="10"
-            required
-          />
+              <div *ngIf="DOB.invalid && (DOB.dirty || DOB.touched)" class="alerts">
+                <div *ngIf="DOB.errors.required">required</div>
+              </div>
+            </div>
 
-          <div
-            *ngIf="mobile.errors && (mobile.touched || mobile.dirty)"
-            class="alerts"
-          >
-            <div *ngIf="mobile.errors.required">Enter Mobile Number</div>
-            <div class="errorMsg" *ngIf="mobile.errors.minlength">
-              Please enter valid mobile number
+            <div class="col-md-4">
+              <label for="email" class="control-lable"><strong>Email:</strong></label>
+              <input type="text" class="form-control" name="email" placeholder="enter email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email" [(ngModel)]="email"
+                #emailref="ngModel" required />
+              <div *ngIf="emailref.errors && (emailref.touched || emailref.dirty)" class="alerts">
+                <div *ngIf="emailref.errors.required">Please enter Email</div>
+                <div [hidden]="!emailref.errors?.pattern">
+                  please enter a valid email
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-4">
-          <label for="address" class="control-label"
-            ><strong
-              >Flat no, Building, Company, Apartment</strong
-            ></label
-          >
-          <input
-            type="text"
-            name="address"
-            class="form-control"
-            placeholder="Address"
-            id="address"
-            [(ngModel)]="address"
-            #Address="ngModel"
-            required
-          />
+          <div class="row">
+            <div class="col-md-4">
+              <label for="gender" class="control-label"><strong>Gender:</strong></label>
+              <select class="custom-select gender form-control" name="gender" required id="gender" [(ngModel)]="gender"
+                #Gender="ngModel">
+                <option disabled selected> Select your Gender </option>
+                <!-- <option disabled> select your gender</option> -->
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Custom">Custom</option>
+              </select>
+              <div *ngIf="Gender.errors && (Gender.touched || Gender.dirty)" class="alerts">
+                <div *ngIf="Gender.errors.required">Select gender</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="Mobile" class="control-label">
+                <strong>Mobile number:</strong></label>
+              <input type="tel" class="form-control" name="mobileNumber" placeholder="Mobile number" id="Mobile"
+                [(ngModel)]="mobileNumber" #mobile="ngModel" minlength="10" maxlength="10" required />
 
-          <div
-            *ngIf="Address.errors && (Address.touched || Address.dirty)"
-            class="alerts"
-          >
-            <div *ngIf="Address.errors.required">Please Enter Your Address</div>
+              <div *ngIf="mobile.errors && (mobile.touched || mobile.dirty)" class="alerts">
+                <div *ngIf="mobile.errors.required">Enter Mobile Number</div>
+                <div class="errorMsg" *ngIf="mobile.errors.minlength">
+                  Please enter valid mobile number
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <label for="plot" class="control-label"
-            ><strong>Area, Colony, Street, Sector, Village</strong></label
-          >
-          <input
-            type="text"
-            name="village"
-            class="form-control"
-            id="plot"
-            [(ngModel)]="village"
-            #plot="ngModel"
-            required
-          />
+          <div class="row">
+            <div class="col-md-4">
+              <label for="address" class="control-label"><strong>Flat no, Building, Company, Apartment</strong></label>
+              <input type="text" name="address" class="form-control" placeholder="Address" id="address"
+                [(ngModel)]="address" #Address="ngModel" required />
 
-          <div
-            *ngIf="plot.errors && (plot.touched || plot.dirty)"
-            class="alerts"
-          >
-            <div *ngIf="plot.errors.required">Required</div>
+              <div *ngIf="Address.errors && (Address.touched || Address.dirty)" class="alerts">
+                <div *ngIf="Address.errors.required">Please Enter Your Address</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="plot" class="control-label"><strong>Area, Colony, Street, Sector, Village</strong></label>
+              <input type="text" name="village" class="form-control" id="plot" [(ngModel)]="village" #plot="ngModel"
+                required />
+
+              <div *ngIf="plot.errors && (plot.touched || plot.dirty)" class="alerts">
+                <div *ngIf="plot.errors.required">Required</div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-4">
-          <label for="District" class="control-label"
-            ><strong>city</strong></label
-          >
-          <input
-            type="text"
-            class="form-control"
-            placeholder="District"
-            name="city"
-            id="District"
-            [(ngModel)]="city"
-            #District="ngModel"
-            required
-          />
-          <div
-            *ngIf="District.errors && (District.touched || District.dirty)"
-            class="alerts"
-          >
-            <div *ngIf="District.errors.required">district is required</div>
-          </div>
-        </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label for="District" class="control-label"><strong>city</strong></label>
+              <input type="text" class="form-control" placeholder="District" name="city" id="District"
+                [(ngModel)]="city" #District="ngModel" required />
+              <div *ngIf="District.errors && (District.touched || District.dirty)" class="alerts">
+                <div *ngIf="District.errors.required">district is required</div>
+              </div>
+            </div>
 
-        <div class="col-md-4">
-          <label for="pincode" class="control-label"
-            ><strong>Pincode</strong></label
-          >
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Pincode"
-            id="pincode"
-            name="pinCode"
-            [(ngModel)]="pinCode"
-            #pincode="ngModel"
-            required
-            minlength="6"
-            maxlength="6"
-          />
-          <div
-            *ngIf="
+            <div class="col-md-4">
+              <label for="pincode" class="control-label"><strong>Pincode</strong></label>
+              <input type="text" class="form-control" placeholder="Pincode" id="pincode" name="pinCode"
+                [(ngModel)]="pinCode" #pincode="ngModel" required minlength="6" maxlength="6" />
+              <div *ngIf="
               pincode.errors &&
               (pincode.touched || pincode.dirty || pincode.minlength)
-            "
-            class="alerts"
-          >
-            <div *ngIf="pincode.errors.required">pincode required</div>
-            <div *ngIf="pincode.errors.minlength">pincode incorrect</div>
+            " class="alerts">
+                <div *ngIf="pincode.errors.required">pincode required</div>
+                <div *ngIf="pincode.errors.minlength">pincode incorrect</div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <label for="password" class="control-label"
-            ><strong>Password:</strong></label
-          >
-          <input
-            class="form-control"
-            type="password"
-            id="password"
-            name="password"
-            [(ngModel)]="password"
-            #pswd="ngModel"
-            placeholder="enter password"
-            required
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          />
-          <small>
-            Must contain at least one number and one uppercase and lowercase
-            letter, and at least 8 or more characters.</small
-          >
-          <div
-            *ngIf="
+          <div class="row">
+            <div class="col-md-4">
+              <label for="password" class="control-label"><strong>Password:</strong></label>
+              <input class="form-control" type="password" id="password" name="password" [(ngModel)]="password"
+                #pswd="ngModel" placeholder="enter password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+              <small>
+                Must contain at least one number and one uppercase and lowercase
+                letter, and at least 8 or more characters.</small>
+              <div *ngIf="
               pswd.errors &&
               (RegistrationForm.submitted ||
                 pswd.touched ||
                 pswd.dirty ||
                 pswd.minlength)
-            "
-            class="alerts"
-          >
-          <small *ngIf="pswd.touched">Password Required</small><br>
-            <small *ngIf="pswd.errors.pattern">
-              Choose a strong Password. </small
-            ><br />
-            <small>{{ pswd.value }}</small><br>
-            
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="password" class="control-label"
-            ><strong>Confirm Password:</strong></label
-          >
-          <input
-            class="form-control"
-            type="password"
-            id="cpassword"
-            [(ngModel)]="cpswd"
-            #cpassword="ngModel"
-            placeholder="Confirm password"
-            name="cpassword"
-            required
-            pattern="{{ pswd.value }}"
-          />
-          <div
-            *ngIf="
+            " class="alerts">
+                <small *ngIf="pswd.touched">Password Required</small><br>
+                <small *ngIf="pswd.errors.pattern">
+                  Choose a strong Password. </small><br />
+                <small>{{ pswd.value }}</small><br>
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="password" class="control-label"><strong>Confirm Password:</strong></label>
+              <input class="form-control" type="password" id="cpassword" [(ngModel)]="cpswd" #cpassword="ngModel"
+                placeholder="Confirm password" name="cpassword" required pattern="{{ pswd.value }}" />
+              <div *ngIf="
               cpassword.errors &&
               (RegistrationForm.submitted ||
                 cpassword.touched ||
                 cpassword.dirty)
-            "
-            class="alerts"
-          >
-            <div *ngIf="cpassword.errors.touched">Password Required</div>
-            <div *ngIf="cpassword.errors.pattern">Password Miss Match</div>
-            <small>{{ cpassword.value }}</small
-            ><br />
-            <small>{{ pswd.value }}</small>
+            " class="alerts">
+                <div *ngIf="cpassword.errors.touched">Password Required</div>
+                <div *ngIf="cpassword.errors.pattern">Password Miss Match</div>
+                <small>{{ cpassword.value }}</small><br />
+                <small>{{ pswd.value }}</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="container m-2 col-md-4">
+              <button type="button" class="btn btn-primary mt-5" [disabled]="!RegistrationForm.form.valid"
+                (click)="saveReg()">
+                Register
+              </button>
+              &nbsp;
+              <a href="/login" class="btn btn-primary mt-5 mr-5" role="button">Signin Instead</a>
+            </div>
+            <!-- <div class="container m-5 col-md-4"> -->
+
+            <!-- </div> -->
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="container m-2 col-md-4">
-          <button
-            type="button"
-            class="btn btn-primary mt-5"
-            [disabled]="!RegistrationForm.form.valid"
-            (click)="saveReg()"
-          >
-            Register
-          </button>
-          &nbsp;
-          <a href="/login" class="btn btn-primary mt-5 mr-5" role="button"
-            >Signin Instead</a
-          >
-        </div>
-        <!-- <div class="container m-5 col-md-4"> -->
-
-        <!-- </div> -->
-      </div>
+      </form>
     </div>
-  </form>
-</div>
-</div>
+  </div>
 </div>
