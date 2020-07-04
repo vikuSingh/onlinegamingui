@@ -19,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { FooterComponent } from './footer/footer.component';
 
  
 
@@ -38,7 +39,8 @@ import { ViewprofileComponent } from './viewprofile/viewprofile.component';
     ContactComponent,
     NavbarComponent,
     SidebarComponent,
-    ViewprofileComponent
+    ViewprofileComponent,
+    FooterComponent
     ],
   imports: [
     BrowserModule,
