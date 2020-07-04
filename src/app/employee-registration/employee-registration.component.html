@@ -4,65 +4,142 @@
     <div id="page-content-wrapper">
         <app-navbar></app-navbar>
         <div class="container-fluid">
-            <h1 class="mt-4">Employee Registration</h1>
+            <h1 class="mt-4" header >Employee Registration</h1>
             <div class="row register-form">
                 <div class="col-md-6">
 
                     <div class="form-group">
+                        <label class="control-label" for="EmployeeName" ><strong>EmployeeName:</strong></label >
                         <input type="text" class="form-control" placeholder="Name of the Employee*" name="ename"
-                            [(ngModel)]="ename" />
+                            [(ngModel)]="ename" #fname="ngModel"
+                            required />
+                            <span
+                            *ngIf="
+                              fname.invalid && (fname.dirty || fname.touched) && fname.invalid
+                            "
+                            class="alerts"
+                          >
+                            <div class="errorMsg" *ngIf="fname.errors.required">
+                              required
+                            </div>
+                        </span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="EmployeeID *" name="eid"
-                            [(ngModel)]="eid" />
+                        <label class="control-label" for="EmployeeID" ><strong>EmployeeID:</strong></label >
+                        <input type="text" class="form-control" placeholder="EmployeeID *" name="eid" #Eid=ngModel
+                            [(ngModel)]="eid" required />
+
+                            <span
+                            *ngIf="
+                            Eid.invalid && (Eid.dirty || Eid.touched) && Eid.invalid
+                            "
+                            class="alerts"
+                          >
+                            <div class="errorMsg" *ngIf="Eid.errors.required">
+                              required
+                            </div>
+                        </span>
                     </div>
                     <div class="form-group">
+                        <label class="control-label" for="Address" ><strong>Address:</strong></label >
                         <input type="text" class="form-control" placeholder="Address" name="address"
-                            [(ngModel)]="address" />
+                            [(ngModel)]="address" #Address="ngModel"
+                            required />
+                         <span
+                            *ngIf="
+                            Address.invalid && (Address.dirty || Address.touched) && Address.invalid
+                            "
+                            class="alerts"
+                          >
+                            <div class="errorMsg" *ngIf="Address.errors.required">
+                              required
+                            </div>
+                        </span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Age" name="age" [(ngModel)]="age" />
+                        <label class="control-label" for="Age" ><strong>Age:</strong></label >
+                        <input type="text" class="form-control" placeholder="Age" name="age" [(ngModel)]="age" #Age=ngModel required />
+                        <span
+                        *ngIf="
+                          Age.invalid && (Age.dirty || Age.touched) && Age.invalid
+                        "
+                        class="alerts"
+                      >
+                        <div class="errorMsg" *ngIf="Age.errors.required">
+                          required
+                        </div>
+                    </span>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label class="control-label" for="EMail" ><strong>EMail:</strong></label >
                         <input type="email" class="form-control" placeholder="Email *" name="email"
-                            [(ngModel)]="email" />
+                            [(ngModel)]="email" #Email=ngModel required />
+                            <span
+                            *ngIf="
+                            Email.invalid && (Email.dirty || Email.touched) && Email.invalid
+                            "
+                            class="alerts"
+                          >
+                            <div class="errorMsg" *ngIf="Email.errors.required">
+                              required
+                            </div>
+                        </span>
                     </div>
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                        </div>
-                        <select class="custom-select" style="max-width: 120px;">
-                            <option data-countryCode="AU" value="61">Australia (+61)</option>
-                            <option data-countryCode="CA" value="1">Canada (+1)</option>
-                            <option data-countryCode="FR" value="33">France (+33)</option>
-                            <option data-countryCode="IN" value="91">India (+91)</option>
-                            <option data-countryCode="JP" value="81">Japan (+81)</option>
-                            <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
-                        </select>
-                        <input class="form-control" placeholder="Phonenumber" type="text" name="phoneNumber"
-                            [(ngModel)]="phoneNumber">
+                    <div class="form-group">
+                        <label class="control-label" for="PhoneNumber"><strong>PhoneNumber:</strong></label><br>
+                         
+                         <input class="form-control" placeholder="Phonenumber" type="text" name="phoneNumber"
+                            [(ngModel)]="phoneNumber" #Mobile=ngModel required>
+
+                            <span
+                            *ngIf="
+                            Mobile.invalid && (Mobile.dirty || Mobile.touched) && Mobile.invalid
+                            "
+                            class="alerts"
+                          >
+                            <div class="errorMsg" *ngIf="Mobile.errors.required">
+                              required
+                            </div>
+                        </span>
                     </div>
 
                     <div class="form-group">
-                        <input type="date" id="birthday" name="dob" [(ngModel)]="dob">
+                        <label class="control-label" for="DateOfBirth"><strong>DateOfBirth:</strong></label><br>
+                        <input type="date" class="form-control" id="birthday" name="dob" [(ngModel)]="dob" #DOB=ngModel required>
+                        <span
+                        *ngIf="
+                        DOB.invalid && (DOB.dirty || DOB.touched) && DOB.invalid
+                        "
+                        class="alerts"
+                      >
+                        <div class="errorMsg" *ngIf="DOB.errors.required">
+                          required
+                        </div>
+                    </span>
                     </div>
                     <div class="form-group">
                         <div class="maxl">
                             <div class="form-group">
-                                <label>Gender</label> <br>
-                                <label class="checkbox-inline"><input id="genMale" type="checkbox"
-                                        value="genMale">Male</label>
-                                <label class="checkbox-inline"><input id="genFemale" type="checkbox"
-                                        value="genFemale">Female</label>
+                                <label for="gender" class="control-label"
+            ><strong>Gender:</strong></label ><br>
+          <select>
+          <option disabled> select your gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          
+        </select>
                             </div>
+                            
                         </div>
                     </div>
+                    <button type="button" class="btn btn-primary" (click)="empRegister()">View</button>
                 </div>
                 <button type="button" class="btn btn-primary" (click)="empRegister()">Register</button>
             </div>
+             
         </div>
     </div>
     <!-- /#page-content-wrapper -->
