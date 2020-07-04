@@ -40,7 +40,7 @@ export class EmployeeRegistrationComponent implements OnInit {
       data=> {
         this.response = data; 
         if(this.response=="success") {
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/viewemp');
         }else {
           this.reponseError = "Ünable to Save Emp Details..!"
         }
@@ -48,6 +48,8 @@ export class EmployeeRegistrationComponent implements OnInit {
       error => console.log(error));
   }
 
-  
+  public empDetails() {
+     this.router.navigateByUrl('/viewemp');
+  }
 
 }

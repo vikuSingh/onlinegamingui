@@ -20,7 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { ViewempComponent } from './viewemp/viewemp.component';
  
 
 @NgModule({
@@ -40,7 +40,8 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     SidebarComponent,
     ViewprofileComponent,
-    FooterComponent
+    FooterComponent,
+    ViewempComponent
     ],
   imports: [
     BrowserModule,

@@ -4,10 +4,36 @@
    <div id="page-content-wrapper">
        <app-navbar></app-navbar>
        <div class="container-fluid">
-           <h1 class="mt-4">Home Page...</h1>
-                Start you code from here...
+           <h1 class="mt-4">Employee Details</h1>
+           <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Emp ID</th>
+                <th scope="col">Emp Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Age</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Gender</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let emp of responseList">
+              <tr>
+                 <td>{{emp.eid}}</td>
+                 <td>{{emp.ename}}</td>
+                 <td>{{emp.address}}</td>
+                 <td>{{emp.age }}</td>
+                 <td> {{emp.email}} </td>
+                 <td> {{emp.phoneNumber}} </td>
+                 <td> {{emp.dob}} </td>
+                 <td> {{emp.gender}} </td>
+              </tr>
+            </tbody>
+          </table>
        </div>
    </div>
    <!-- /#page-content-wrapper -->
   
   </div>
+  <app-footer></app-footer>

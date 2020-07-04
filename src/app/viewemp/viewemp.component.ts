@@ -9,22 +9,19 @@ import { EmployeeRegistrationService } from '../employeeRegistration.service';
 export class ViewempComponent implements OnInit {
   response: any;
   responseerror: any;
-  employeeServise: any;
   responseList: any;
 
-  constructor(private empregservice: EmployeeRegistrationService) { }
+  constructor(private employeeService: EmployeeRegistrationService) { }
 
   ngOnInit() {
     this.getEmpDetails();
   }
 
   public getEmpDetails() {
-    this.employeeServise.getEmp().subscribe(
+    this.employeeService.getEmp().subscribe(
       data => {
         this.response = data;
-        console.log("Testing" + this.response);
         this.responseList = this.response;
-        console.log(this.responseList);
       },
       error => console.log(error));
   }

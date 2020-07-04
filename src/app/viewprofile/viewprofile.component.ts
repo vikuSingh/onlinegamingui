@@ -20,9 +20,8 @@ export class ViewprofileComponent implements OnInit {
     this.registrationServise.getRegistration().subscribe(
       data=> {
         this.response = data;
-        console.log( "Testing" +this.response);
         this.responseList = this.response;
-        console.log(this.responseList);
+       
       },
       error=>console.log(error));     
  }
