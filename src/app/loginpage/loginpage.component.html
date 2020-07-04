@@ -1,6 +1,6 @@
 <div class="bg">
   <div class="container ml-5 ">
-    <form class="m-5 mt-5" style="float: right;" #billingForm="ngForm">
+    <form class="m-5 mt-5" style="float: right;" #loginForm="ngForm">
       <h3 style="text-align: center;">Login</h3>
       
       <div class="alert alert-danger" *ngIf="errorMsg"> <span>{{errormsg}}</span></div>
@@ -27,7 +27,7 @@
       </div>
 
       <button type="submit" class="btn btn-primary" (click)="getLogin()"
-        [disabled]="!billingForm.form.valid">Submit</button> &nbsp;&nbsp;
+        [disabled]="!loginForm.form.valid">Submit</button> &nbsp;&nbsp;
 
       <a href="forgotpassword" class="btn btn-primary" role="button">Forgot Password</a>&nbsp;&nbsp;
 
