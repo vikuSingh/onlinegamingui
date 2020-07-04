@@ -9,19 +9,19 @@
          <form #contactUsForm="ngForm">
             <div class="container mr-5">
               <div class="row mt-5">
-                <div class="col-md-4">
+                <div class="col-md-5">
                   <div class="form-group">
-                    <label class="control-label" for="Fullname"
-                      ><strong>Full Name:</strong></label
+                    <label class="control-label" for="Firstname"
+                      ><strong>First Name:</strong></label
                     >
         
                     <input
                       type="text"
                       class="form-control"
-                      id="FullName"
-                      placeholder="Enter Full Name"
-                      name="fullName"
-                      [(ngModel)]="fullName"
+                      id="FirstName"
+                      placeholder="Enter First Name"
+                      name="firstName"
+                      [(ngModel)]="firstName"
                       #fname="ngModel"
                       required
                     />
@@ -42,40 +42,82 @@
                   </div>
                 </div>
         
-                <div class="form-group col-md-4">
-                  <label class="control-label" for="FatherName"
-                    ><strong>Father Name:</strong></label
+                <div class="form-group col-md-5">
+                  <label class="control-label" for="LastName"
+                    ><strong>Last Name:</strong></label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="FatherName"
-                    placeholder="Enter Father Name"
-                    name="fatherName"
-                    [(ngModel)]="fatherName"
-                    #Fathername="ngModel"
+                    id="LastName"
+                    placeholder="Enter Last Name"
+                    name="lastName"
+                    [(ngModel)]="lastName"
+                    #Lastname="ngModel"
                     required
                   />
         
                   <div
                     *ngIf="
-                      Fathername.invalid && (Fathername.dirty || Fathername.touched)
+                    Lastname.invalid && (Lastname.dirty || Lastname.touched)
                     "
                     class="alerts"
                   >
-                    <div *ngIf="Fathername.errors.required">required</div>
-                    <!-- <div class="errorMsg" *ngIf="fname.errors.minlength">
-                      Should be atleast 3 characters
-                    </div> -->
+                    <div *ngIf="Lastname.errors.required">required</div>
+                    
                   </div>
                 </div>
+                
+              
+            
+                  <div class="col-md-5 form-group">
+                  <label class="control-label" for="country"><strong>Country:</strong></label><br>
+                  <select id="country" name="country" (change)="selectChangeHandler($event)">
+                    <option value="0 selected disabled">select country</option>
+                    <option value="India">India</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Usa">USA</option>
+                  </select>
+                  </div>
+                
+                  <div class="form-group col-md-5">
+                    <label class="control-label" for="mobileNo"><strong>MobileNo:</strong></label><br>
+
+                <input class="form-control" placeholder="mobileNo" type="text" name="mobileNo"
+                            [(ngModel)]="mobileNo" #Mobile=ngModel required>
+                <span *ngIf="
+                          Mobile.invalid && (Mobile.dirty || Mobile.touched) && Mobile.invalid
+                          " class="alerts">
+                  <div class="errorMsg" *ngIf="Mobile.errors.required">
+                    required
+                  </div>
+                </span>
+                    </div>
+                    <div class="form-group col-md-5">
+                      <label class="control-label" for="Type msg"><strong>Type Your Message:</strong></label><br>
+                      <textarea id="subject" name="subject" placeholder="Write something.."
+                      [(ngModel)]="subject"></textarea><br><br>
+                      
+                      <button type="button" class="btn btn-primary" (click)="addContact()">Submit</button>
+
+
+                    </div>
+
+                  
+                  
+            
+                
+
+
+
               </div>
               </div>
               
               </form>
 
-     </div>
- </div>
+    </div>
+    </div>
+    
  <!-- /#page-content-wrapper -->
 
 </div>

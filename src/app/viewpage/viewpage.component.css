@@ -39,6 +39,18 @@ img {
     margin-left: 0;
   }
 
+
+  
+  form{
+
+    position: relative;
+  
+  }
+  
+    .head{
+       
+      text-align: center;
+    }  
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
@@ -47,6 +59,7 @@ img {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+  
    
 }
  

@@ -54,6 +54,17 @@ img {
 .head{
   margin-left: 30%;
 }
+#subject{
+    
+  height:50%;
+  width:100%;
+
+}
+#country{
+   
+  height:40%;
+  width:100%;
+}
 /* @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;

@@ -7,6 +7,9 @@ img {
    #wrapper {
       overflow-x: hidden;
    }
+   .head{
+     text-align: center;
+   }
   
   #sidebar-wrapper {
     min-height: 100vh;
