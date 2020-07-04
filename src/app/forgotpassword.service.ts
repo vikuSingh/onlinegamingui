@@ -9,11 +9,11 @@ const httpOptions={
   providedIn: 'root'
 })
 export class ForgotpasswordService {
-  private password_url="http://localhost:8080/onlinegaming/"
+  private password_url="http://localhost:5050/onlinegaming/login"
   constructor(private httpClient:HttpClient) { }
-    public updatePassword(forgotpassword): Observable<any>{
+    public update(forgotpassword): Observable<any>{
 
-    return this.httpClient.put<any>(this.password_url+"login", forgotpassword, httpOptions);
+    return this.httpClient.put<any>(this.password_url+"/update", forgotpassword, httpOptions);
 }
   }
 

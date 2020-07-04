@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
+import { RouterEvent, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-contact',
@@ -17,7 +19,8 @@ export class ContactComponent implements OnInit {
   mobileNo: string;
   country: string;
   subject: string;
-  constructor(private contactService:ContactService) { }
+  constructor(private contactService:ContactService,private router: Router
+    ) { }
 
   ngOnInit() {
 
@@ -28,11 +31,14 @@ export class ContactComponent implements OnInit {
     this.country = event.target.value;
   }
   public addContact() {
+    alert ("submited successfully");
     this.contact.firstName = this.firstName;
     this.contact.lastName = this.lastName;
     this.contact.mobileNo = this.mobileNo;
     this.contact.country = this.country;
     this.contact.subject = this.subject;
+    this.router.navigateByUrl('/view');
+
     console.log(this.contact);
     this.contactService.saveContact(this.contact).subscribe(
       data=> {

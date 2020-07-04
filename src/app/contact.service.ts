@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class ContactService {
 
-  private CONTACT_URL = "http://localhost:5050/onlinegaming/contact";
+  private CONTACT_URL = "http://localhost:8080/onlinegaming/contact";
   constructor(private httpClient : HttpClient) { }
   
   

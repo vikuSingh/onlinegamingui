@@ -1,5 +1,7 @@
 export class Forgotpassword {
-    username:string;
+    email:string;
     password:string;
     confirmPassword:string;
+    
+
 }

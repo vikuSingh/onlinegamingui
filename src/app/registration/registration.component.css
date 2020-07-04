@@ -1,24 +1,25 @@
+
+
 .bg{
-    background-image: url("src\assets\Login\Loginbackground.jpg");
+    color: white;
+    /* background-image: url("src\assets\Login\Loginbackground.jpg"); */
+    /* background-image: url("src\assets\images\registerbg.png"); */
+    background-image: url("src\assets\images\2121757.jpg");
     background-size: cover;
-    height: 790px;
-    width: 700pxpx;
+    height: 100%;
+    /* width: 700px; */
+    max-width: 100%;
+    min-height:100%;
+
 }
 
-.body{
-     float: right;
- }
  .register{
      float: right;
  }
- 
- .form{
-    
-     width: 650px;
-     margin-left: 30%;
-     
- }
- .textarea{
-     width: 530px;
-     height: 100px;
- }
+
+
+.alerts{
+    text-align: right;
+    margin-top: 1px;
+    color: red;
+}

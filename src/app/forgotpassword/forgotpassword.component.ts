@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Forgotpassword } from '../forgotpassword';
 import { ForgotpasswordService } from '../forgotpassword.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -11,25 +12,28 @@ export class ForgotpasswordComponent implements OnInit {
 
   forgotpassword:Forgotpassword= new Forgotpassword();
   response:any;
-  username:string;
+  email:string;
   password:string;
   confirmPassword:string;
+  errormsg:string;
 
-  constructor(private forgotpasswordservice:ForgotpasswordService) { }
+  constructor(private forgotpasswordservice:ForgotpasswordService ,private Router:Router) { }
 
   ngOnInit() {
   }
-  public updatepassword(){
-    this.forgotpassword.username=this.username;
+  public update(){
+    this.forgotpassword.email=this.email;
     this.forgotpassword.password=this.password;
     this.forgotpassword.confirmPassword=this.confirmPassword;
 
     console.log(this.forgotpassword)
-    this.forgotpasswordservice.updatePassword(this.forgotpasswordservice).subscribe(
+    this.forgotpasswordservice.update(this.forgotpassword).subscribe(
       data=> {
         this.response = data; 
-        console.log(data) 
-      },
+        if (this.response==true) {
+          this.Router.navigateByUrl('/login');
+        }
+    },
       error => console.log(error));
     }
 

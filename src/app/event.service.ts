@@ -10,7 +10,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class EventService {
-  private EVENT_URL = "http://localhost:5050/onlinegaming/event";
+  private EVENT_URL = "http://localhost:8080/onlinegaming/event";
   constructor(private httpClient : HttpClient) { }
   
   public saveEvent(event) : Observable<any> {
