@@ -4,20 +4,22 @@ import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  
+
 }
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeRegistrationService {
 
-  private EMPLOYEE_URL="http://localhost:5050/onlinegaming/employee";
+  private EMPLOYEE_URL = "http://localhost:5050/onlinegaming/employee";
 
-  constructor( private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  public empRegister(employeeRegistration): Observable<any>{
+  public empRegister(employeeRegistration): Observable<any> {
+    return this.httpClient.post<any>(this.EMPLOYEE_URL + "/save", employeeRegistration, httpOptions);
 
-    return this.httpClient.post<any>(this.EMPLOYEE_URL+"/save",employeeRegistration, httpOptions);
-
+  }
+  public getEmp(): Observable<any> {
+    return this.httpClient.get<any>(this.EMPLOYEE_URL + "/getEmp");
   }
 }
