@@ -1,10 +1,11 @@
-<div class="container ">
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+<div class="d-flex" id="wrapper">
+    <app-sidebar></app-sidebar>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <app-navbar></app-navbar>
+        <div class="container-fluid">
+            <h1 class="mt-4">Billing Details</h1>
             <form class="form-horizontal " #billingForm="ngForm" novalidate>
-                <h2>BillingDetails</h2>
-                <hr>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group ">
@@ -14,26 +15,21 @@
                                     name="firstName" [(ngModel)]="firstName" #fname="ngModel" required>
                             </div>
                         </div>
-
                         <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
                             <div *ngIf="fname.errors.required">FirstName is required.</div>
                         </div>
                     </div>
-
                     <div class="form-group col-sm-6">
                         <label class="control-label " for="lastname"><b>Last Name:</b></label>
                         <div class="">
                             <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name"
                                 name="lastName" [(ngModel)]="lastName" #lname="ngModel" required>
                         </div>
-                    
-                    <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert alert-danger">
-                        <div *ngIf="lname.errors.required">LastName is required.</div>
+                        <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert alert-danger">
+                            <div *ngIf="lname.errors.required">LastName is required.</div>
+                        </div>
                     </div>
                 </div>
-
-                </div>
-
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -43,7 +39,6 @@
                                     name="email" [(ngModel)]="email" #emailId="ngModel" required>
                             </div>
                         </div>
-
                         <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="alert alert-danger">
                             <div *ngIf="emailId.errors.required">Email is required.</div>
                         </div>
@@ -54,17 +49,14 @@
                             <input type="text" class="form-control" id="phoneNo" placeholder="Enter Phone Number"
                                 name="phoneNo" [(ngModel)]="phoneNo" #phone="ngModel" required>
                         </div>
-                    
+                        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger">
+                            <div *ngIf="phone.errors.required">PhoneNo is required.</div>
+                        </div>
 
-                    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger">
-                        <div *ngIf="phone.errors.required">PhoneNo is required.</div>
                     </div>
-
-                </div>
                 </div>
 
                 <div class="row">
-
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="control-label" for="city"><b>Town/City:</b></label>
@@ -73,30 +65,23 @@
                                     [(ngModel)]="city" #city1="ngModel" required>
                             </div>
                         </div>
-
                         <div *ngIf="city1.invalid && (city1.dirty || city1.touched)" class="alert alert-danger">
                             <div *ngIf="city1.errors.required">city is required.</div>
                         </div>
-
                     </div>
-
                     <div class="form-group col-sm-6">
                         <label class="control-label" for="pincode"><b>PIN Code:</b></label>
                         <div>
                             <input type="text" class="form-control" id="pinCode" placeholder="Enter PIN code"
                                 name="pinCode" [(ngModel)]="pinCode" #pincode1="ngModel" required>
                         </div>
-                   
-
-                    <div *ngIf="pincode1.invalid && (pincode1.dirty || pincode1.touched)" class="alert alert-danger">
-                        <div *ngIf="pincode1.errors.required">Pincode is required.</div>
+                        <div *ngIf="pincode1.invalid && (pincode1.dirty || pincode1.touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="pincode1.errors.required">Pincode is required.</div>
+                        </div>
                     </div>
                 </div>
-                </div>
-
                 <div class="row">
-
-
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
@@ -111,9 +96,7 @@
                             </tr>
                             <tr>
                                 <td>
-
                                     <label class="control-label form-group" for="subtotal"><b>Sub Total:</b></label>
-
                                 </td>
                                 <td>
                                     <div>
@@ -125,7 +108,6 @@
                                         class="alert alert-danger">
                                         <div *ngIf="subtotal1.errors.required">SubTotal is required.</div>
                                     </div>
-
                                 </td>
                             </tr>
                             <tr>
@@ -140,25 +122,18 @@
                                         class="alert alert-danger">
                                         <div *ngIf="total1.errors.required">Total is required.</div>
                                     </div>
-
                                 </td>
-
-
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
-
                 <div class="row " style="float: right;">
                     <input type="submit" value="Place on Order" (click)="saveBilling()"
                         [disabled]="!billingForm.form.valid" class="btn btn-primary">
                 </div>
-
-
             </form>
         </div>
-        <div class="col-sm-1"></div>
-
     </div>
+    <!-- /#page-content-wrapper -->
+
 </div>
