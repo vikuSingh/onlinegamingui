@@ -9,7 +9,7 @@ import { RouterEvent, Router } from '@angular/router';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
+  responseList : [];
   registration:Registration=new Registration();
   response:any
   fullName:string;
@@ -23,6 +23,7 @@ export class RegistrationComponent implements OnInit {
 	city:string;
 	mobileNumber:string;
 	password:string;
+  reponseError: string;
 
   constructor( private registrationServise:RegistrationService,private router: Router) {
   }
@@ -31,11 +32,10 @@ export class RegistrationComponent implements OnInit {
   }
 
   
-  public regdtls() {
-    alert("submitted successfully");
+  public saveReg() {
     this.registration.fullName = this.fullName;
     this.registration.fatherName = this.fatherName;
-    this.registration.email = this.email;
+    this.registration.email = this.email;``
     this.registration.gender=this.gender;
     this.registration.dob= this.dob;
     this.registration.pinCode=this.pinCode;
@@ -44,14 +44,18 @@ export class RegistrationComponent implements OnInit {
     this.registration.city=this.city;
     this.registration.mobileNumber=this.mobileNumber;
     this.registration.password=this.password;
-    console.log(this.registration);
-    this.router.navigateByUrl('/login');
-    this.registrationServise.regdtls(this.registration).subscribe(
+    
+    this.registrationServise.saveRegistration(this.registration).subscribe(
       data=> {
         this.response = data; 
-        console.log(data) 
+        if(this.response=='pass') {
+          this.router.navigateByUrl('/login');
+        }else {
+            this.reponseError = "Registration Failed...!"     
+        }
       },
       error => console.log(error));
   }
 
+ 
 }

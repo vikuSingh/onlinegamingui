@@ -1,5 +1,8 @@
-<div class="bg">
-  <div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <div  class="bg col-sm-12 col-md-12 col-lg-12 col-xl-12"> 
+  
+ <div class="container">
     <h3 style="text-align: center;">Register Here</h3>
     <hr style="background-color: black;" />
   </div>
@@ -21,7 +24,6 @@
               [(ngModel)]="fullName"
               #fname="ngModel"
               required
-              minlength="3"
             />
 
             <div
@@ -33,9 +35,9 @@
               <div class="errorMsg" *ngIf="fname.errors.required">
                 required
               </div>
-              <div class="errorMsg" *ngIf="fname.errors.minlength">
+             <!--  <div class="errorMsg" *ngIf="fname.errors.minlength">
                 Should be at least 3 characters
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -53,7 +55,6 @@
             [(ngModel)]="fatherName"
             #Fathername="ngModel"
             required
-            minlength="3"
           />
 
           <div
@@ -63,9 +64,9 @@
             class="alerts"
           >
             <div *ngIf="Fathername.errors.required">required</div>
-            <div class="errorMsg" *ngIf="fname.errors.minlength">
+            <!-- <div class="errorMsg" *ngIf="fname.errors.minlength">
               Should be atleast 3 characters
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -131,8 +132,8 @@
             [(ngModel)]="gender"
             #Gender="ngModel"
           >
-            <!-- <option  selected>Select your Gender</option> -->
-            <option disabled> select your gender</option>
+            <option disabled selected> Select your Gender </option>
+            <!-- <option disabled> select your gender</option> -->
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Custom">Custom</option>
@@ -177,7 +178,7 @@
         <div class="col-md-4">
           <label for="address" class="control-label"
             ><strong
-              >Flat, House no., Building, Company, Apartment</strong
+              >Flat no, Building, Company, Apartment</strong
             ></label
           >
           <input
@@ -303,11 +304,12 @@
             "
             class="alerts"
           >
+          <small *ngIf="pswd.touched">Password Required</small><br>
             <small *ngIf="pswd.errors.pattern">
               Choose a strong Password. </small
             ><br />
-            <small>{{ pswd.value }}</small>
-            <div *ngIf="pswd.touched">Password Required</div>
+            <small>{{ pswd.value }}</small><br>
+            
           </div>
         </div>
         <div class="col-md-4">
@@ -348,7 +350,7 @@
             type="button"
             class="btn btn-primary mt-5"
             [disabled]="!RegistrationForm.form.valid"
-            (click)="regdtls()"
+            (click)="saveReg()"
           >
             Register
           </button>
@@ -363,4 +365,6 @@
       </div>
     </div>
   </form>
+</div>
+</div>
 </div>

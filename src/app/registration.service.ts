@@ -15,13 +15,13 @@ export class RegistrationService {
   private REG_URL = "http://localhost:5050/onlinegaming/registration";
   constructor(private httpClient : HttpClient) { }
 
-  public regdtls(registration) : Observable<any> {
+  public saveRegistration(registration) : Observable<any> {
     return this.httpClient.post<any>(this.REG_URL+"/save",registration,httpOptions);
   }
 
- /*  public regdtls()() : Observable<any> {
-    return this.httpClient.get<any>(this.CONTACT_URL+"/retrive");
-  } */
+  public getRegistration() : Observable<any> {
+    return this.httpClient.get<any>(this.REG_URL+"/list");
+  }
 
 }
   

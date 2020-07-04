@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 
  
 
@@ -36,7 +37,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AboutComponent,
     ContactComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ViewprofileComponent
     ],
   imports: [
     BrowserModule,
