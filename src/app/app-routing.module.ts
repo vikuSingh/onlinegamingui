@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:"contact",component:ContactComponent},
   {path:"about",component:AboutComponent},
   {path:"viewprofile",component:ViewprofileComponent},
+  /* {path:"footer",component:FooterComponent} */
   
 ];
 
