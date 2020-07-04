@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class EmployeeRegistrationComponent implements OnInit {
  
   empregistration:EmployeeRegistration=new EmployeeRegistration();
-  response:any;
+  response:string;
   eid:number;
   ename:string;
   address:string;
@@ -27,7 +27,6 @@ export class EmployeeRegistrationComponent implements OnInit {
 
   }
   public empRegister() {
-      
      this.empregistration.eid=this.eid;
      this.empregistration.ename=this.ename;
      this.empregistration.address=this.address;
@@ -38,7 +37,7 @@ export class EmployeeRegistrationComponent implements OnInit {
      this.empregistration.gender=this.gender;
      this.empregservice.empRegister(this.empregistration).subscribe(
       data=> {
-        this.response = data; 
+        this.response = data;
         if(this.response=="success") {
           this.router.navigateByUrl('/viewemp');
         }else {
@@ -46,6 +45,7 @@ export class EmployeeRegistrationComponent implements OnInit {
         }
       },
       error => console.log(error));
+      
   }
 
   public empDetails() {
