@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeRegistration } from '../employeeRegistration';
 import { EmployeeRegistrationService } from '../employeeRegistration.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-registration',
@@ -8,8 +9,7 @@ import { EmployeeRegistrationService } from '../employeeRegistration.service';
   styleUrls: ['./employee-registration.component.css']
 })
 export class EmployeeRegistrationComponent implements OnInit {
-
-
+ 
   empregistration:EmployeeRegistration=new EmployeeRegistration();
   response:any;
   eid:number;
@@ -20,8 +20,8 @@ export class EmployeeRegistrationComponent implements OnInit {
   phoneNumber:string;
   dob:string;
   gender:string;
-   
-  constructor(private empregservice:EmployeeRegistrationService) { }
+  reponseError:any; 
+  constructor(private empregservice:EmployeeRegistrationService,private router: Router) { }
 
   ngOnInit() {
 
@@ -36,13 +36,14 @@ export class EmployeeRegistrationComponent implements OnInit {
      this.empregistration.phoneNumber=this.phoneNumber;
      this.empregistration.dob=this.dob;
      this.empregistration.gender=this.gender;
-
-
-    console.log(this.empregistration);
-    this.empregservice.empRegister(this.empregistration).subscribe(
+     this.empregservice.empRegister(this.empregistration).subscribe(
       data=> {
         this.response = data; 
-        console.log(data) 
+        if(this.response=="success") {
+          this.router.navigateByUrl('/');
+        }else {
+          this.reponseError = "Ünable to Save Emp Details..!"
+        }
       },
       error => console.log(error));
   }
