@@ -4,9 +4,10 @@ img {
   margin-right: auto;
   width: 70%;
 }
- #wrapper {
-    overflow-x: hidden;
- }
+
+#wrapper {
+  overflow-x: hidden;
+}
 
 #sidebar-wrapper {
   min-height: 100vh;
@@ -38,39 +39,20 @@ img {
   #sidebar-wrapper {
     margin-left: 0;
   }
-
-
-  
-  form{
-
+  form {
     position: relative;
-  
   }
-  .header{
+  .header {
     padding-right: 5%;
   }
-  
-    .head{
-       
-      text-align: center;
-    }  
+  .head {
+    text-align: center;
+  }
   #page-content-wrapper {
     min-width: 0;
     width: 100%;
   }
-
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
-  
-   
 }
- 
-  
-
-    
-
-
-
-
-

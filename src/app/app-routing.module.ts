@@ -12,7 +12,6 @@ import { ContactComponent } from './contact/contact.component';
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
-import { FooterComponent } from './footer/footer.component';
 import { ViewempComponent } from './viewemp/viewemp.component';
 
 
