@@ -4,6 +4,7 @@ import { Cart } from '../cart';
 import { Billing } from '../billing';
 import { BillingService } from '../billing.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-billing',
@@ -27,7 +28,7 @@ export class BillingComponent implements OnInit {
   total :number;
 
 
-  constructor(private billingService :BillingService) { }
+  constructor(private billingService :BillingService, private router : Router) { }
 
   
 
@@ -53,7 +54,9 @@ export class BillingComponent implements OnInit {
     this.billingService.saveBilling(this.billing).subscribe(
       data =>{
         this.response=data;
-        
+        if (this.response == true) {
+          this.router.navigateByUrl('/gallery');
+        }
         console.log(data);
       },
 

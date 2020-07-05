@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../cart';
 import { CartService } from '../cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -18,10 +19,9 @@ export class CartComponent implements OnInit {
   couponCode:string;
 
 
-  constructor(private cartService : CartService) { }
+  constructor(private cartService : CartService , private router : Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 
   public saveCart(){
@@ -34,7 +34,10 @@ export class CartComponent implements OnInit {
     console.log(this.cart);
     this.cartService.saveCart(this.cart).subscribe(
       data =>{
-        this.response=data;
+        this.response = data;
+        if (this.response == true) {
+          this.router.navigateByUrl('/billing');
+        }
         console.log(data)
       },
       error =>console.log(error)
