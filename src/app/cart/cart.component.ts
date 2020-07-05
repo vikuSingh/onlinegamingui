@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../cart';
 import { CartService } from '../cart.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
   cart : Cart = new Cart();
+  cartDetails : any;
   response : any;
   item:string;
   price:number;
@@ -19,16 +20,22 @@ export class CartComponent implements OnInit {
   couponCode:string;
 
 
-  constructor(private cartService : CartService , private router : Router) { }
+  constructor(private cartService : CartService , private router : Router, private route:ActivatedRoute) { 
+  this.cartDetails=  this.router.getCurrentNavigation().extras.state
+ 
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+    //console.log(history.state)
+    console.log(this.cartDetails)
+   }
 
 
   public saveCart(){
-    this.cart.item=this.item;
-    this.cart.price=this.price;
-    this.cart.quantity=this.quantity;
-    this.cart.total=this.total;
+    this.cart.item=this.cartDetails['item'];
+    this.cart.price=this.cartDetails['price'];
+    this.cart.quantity=this.cartDetails['quantity'];
+    this.cart.total=this.cartDetails['total'];
     this.cart.couponCode=this.couponCode;
 
     console.log(this.cart);

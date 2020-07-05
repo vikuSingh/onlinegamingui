@@ -5,60 +5,87 @@
       <app-navbar></app-navbar>
       <div class="container-fluid">
          <h1 class="mt-4 head">Gallery</h1>
+         <hr>
          <div class="row">
 
+            <div class="col-sm-4">
+               <a [routerLink]="['/cart']" [state]="{ item: 'BubbleShooter', price: 1200, quantity: 1, total: 1200 }">
+                  <img src="assets/gallery/bobble.jpg" class="img-rounded" alt="Girl in a jacket" width="190"
+                     height="190"> </a>
+                  <h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bubble Shooter</h2>
+                  <input type="hidden" id="item"  name="item" value="BubbleShooter" [(ngModel)]="item">
+                  <input type="hidden" id="price" name="price" value="1200" [(ngModel)]="price">
+                  <input type="hidden" id="quantity" name="quantity" value="1" [(ngModel)]="quantity">
+                  <input type="hidden" id="total" name="total" value="1200" [(ngModel)]="total">
+            </div>
+            
+            <div class="col-sm-4">
+               <a [routerLink]="['/cart']" [state]="{ item: 'CandyCane', price: 1000, quantity: 1, total: 1000 }">
+                  <img src="assets/gallery/candy.jpg" class="img-rounded" alt="Girl in a jacket" width="190"
+                     height="190">
+               </a>
+               <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Candy Cane</h2>
+               <input type="hidden" id="item"  name="item" value="CandyCane" [(ngModel)]="item">
+               <input type="hidden" id="price" name="price" value="1000" [(ngModel)]="price">
+               <input type="hidden" id="quantity" name="quantity" value="1" [(ngModel)]="quantity">
+               <input type="hidden" id="total" name="total" value="1000" [(ngModel)]="total">
+            </div>
 
             <div class="col-sm-4">
-               <a href="cart">
-                  <img src="assets/images/carimage.jpg" class="img-rounded" alt="Girl in a jacket" width="160"
-                     height="160">
+               <a [routerLink]="['/cart']" [state]="{ item: 'StockCar Hero', price: 1500, quantity: 1, total: 1500 }">
+                  <img src="assets/gallery/car.jpg" class="img-rounded" alt="Girl in a jacket" width="190"
+                     height="190">
                </a>
-               <h2>Action Games</h2>
-
+               <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StockCar Hero</h2>
+               <input type="hidden" id="item"  name="item" value="StockCar Hero" [(ngModel)]="item">
+               <input type="hidden" id="price" name="price" value="1500" [(ngModel)]="price">
+               <input type="hidden" id="quantity" name="quantity" value="1" [(ngModel)]="quantity">
+               <input type="hidden" id="total" name="total" value="1500" [(ngModel)]="total">
             </div>
-            <div class="col-sm-4">
 
-               <a href="cart">
-                  <img src="assets/images/carimage.jpg" class="img-rounded" alt="Girl in a jacket" width="160"
-                     height="160">
-               </a>
-               <h2>Action Games</h2>
-            </div>
-            <div class="col-sm-4">
-
-               <a href="cart">
-                  <img src="assets/images/carimage.jpg" class="img-rounded" alt="Girl in a jacket" width="160"
-                     height="160">
-               </a>
-               <h2>Action Games</h2>
-            </div>
          </div>
+         <br>
+
          <div class="row">
+
             <div class="col-sm-4">
-               <a href="cart">
-                  <img src="assets/images/carimage.jpg" class="img-rounded" alt="Girl in a jacket" width="200"
+               <a [routerLink]="['/cart']" [state]="{ item: 'Chess', price: 1300, quantity: 1, total: 1300 }">
+                  <img src="assets/gallery/chess.jpg" class="img-rounded" alt="Girl in a jacket" width="200"
                      height="200">
                </a>
-               <h2>Action Games</h2>
-
+               <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chess</h2>
+               <input type="hidden" id="item"  name="item" value="Chess" [(ngModel)]="item">
+               <input type="hidden" id="price" name="price" value="1300" [(ngModel)]="price">
+               <input type="hidden" id="quantity" name="quantity" value="1" [(ngModel)]="quantity">
+               <input type="hidden" id="total" name="total" value="1300" [(ngModel)]="total">
             </div>
-            <div class="col-sm-4">
 
-               <a href="cart">
-                  <img src="assets/images/carimage.jpg" class="img-rounded" alt="Girl in a jacket" width="200"
+            <div class="col-sm-4">
+               <a [routerLink]="['/cart']" [state]="{ item: 'PoolBall', price: 1800, quantity: 1, total: 1800 }">
+                  <img src="assets/gallery/pool.jpg" class="img-rounded" alt="Girl in a jacket" width="200"
                      height="200">
                </a>
-               <h2>Action Games</h2>
+               <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PoolBall</h2>
+               <input type="hidden" id="item"  name="item" value="PoolBall" [(ngModel)]="item">
+               <input type="hidden" id="price" name="price" value="1800" [(ngModel)]="price">
+               <input type="hidden" id="quantity" name="quantity" value="1" [(ngModel)]="quantity">
+               <input type="hidden" id="total" name="total" value="1800" [(ngModel)]="total">
             </div>
-            <div class="col-sm-4">
 
-               <a href="cart">
-                  <img src="assets/images/carimage.jpg" class="img-rounded" alt="Girl in a jacket" width="200"
+            <div class="col-sm-4">
+               <a [routerLink]="['/cart']" [state]="{ item: 'Sudoku', price: 1600, quantity: 1, total: 1600 }">
+                  <img src="assets/gallery/sudoku.jpg" class="img-rounded" alt="Girl in a jacket" width="200"
                      height="200">
                </a>
-               <h2>Action Games</h2>
+               <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sudoku</h2>
+               <input type="hidden" id="item"  name="item" value="Sudoku" [(ngModel)]="item">
+               <input type="hidden" id="price" name="price" value="1600" [(ngModel)]="price">
+               <input type="hidden" id="quantity" name="quantity" value="1" [(ngModel)]="quantity">
+               <input type="hidden" id="total" name="total" value="1600" [(ngModel)]="total">
             </div>
+
          </div>
+         <br><br>
 
       </div>
    </div>
