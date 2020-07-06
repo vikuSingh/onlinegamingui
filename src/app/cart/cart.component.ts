@@ -21,13 +21,14 @@ export class CartComponent implements OnInit {
 
 
   constructor(private cartService : CartService , private router : Router, private route:ActivatedRoute) { 
-  this.cartDetails=  this.router.getCurrentNavigation().extras.state
+  this.cartDetails=  this.router.getCurrentNavigation().extras.state;
  
   }
 
   ngOnInit() {
     //console.log(history.state)
     console.log(this.cartDetails)
+    console.log(this.cart)
    }
 
 
@@ -43,7 +44,7 @@ export class CartComponent implements OnInit {
       data =>{
         this.response = data;
         if (this.response == true) {
-          this.router.navigateByUrl('/billing');
+          this.router.navigateByUrl('/billing', { state: { product:this.cart.item, price: this.cart.price } });
         }
         console.log(data)
       },

@@ -4,7 +4,9 @@ import { Cart } from '../cart';
 import { Billing } from '../billing';
 import { BillingService } from '../billing.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { MapType } from '@angular/compiler';
 
 @Component({
   selector: 'app-billing',
@@ -26,14 +28,21 @@ export class BillingComponent implements OnInit {
   price :number;
   subTotal :number;
   total :number;
+  cart: any;
+  
+  
 
 
-  constructor(private billingService :BillingService, private router : Router) { }
-
+  constructor(private billingService :BillingService, private router : Router, private route: ActivatedRoute) {
+    this.cart=  this.router.getCurrentNavigation().extras.state;
+    
+   }
+     
   
 
   ngOnInit() {
-        
+        console.log("Billling Details")
+        console.log(this.cart)
     
   }
 
@@ -44,8 +53,8 @@ export class BillingComponent implements OnInit {
     this.billing.pinCode=this.pinCode;
     this.billing.email=this.email;
     this.billing.phoneNo=this.phoneNo;
-    this.billing.product=this.product;
-    this.billing.price=this.price;
+    this.billing.product=this.cart['product'];
+    this.billing.price=this.cart['price'];  
     this.billing.subTotal=this.subTotal;
     this.billing.total=this.total;
 
