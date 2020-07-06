@@ -3,32 +3,194 @@
   <!-- Page Content -->
   <div id="page-content-wrapper">
     <app-navbar></app-navbar>
-    <div class="container-fluid">
-      <h2 style="text-align: center;">Packages</h2><br>
-      <ul style="list-style-type:none">
+     
+    <div class="container">
+      <div class="row">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Packages
+          </button><br>
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item" tabindex="-1" href="#">Indoor Games</a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#">Carroms</a>
+                  <ul class="dropdown-menu">
 
-        <li>
-          <button href="#" type="button" id="dropdown" data-toggle="dropdown"
-            class=" btn btn-primary dropdown-toggle multi-level-dropdown" aria-haspopup="true"
-            aria-expanded="false">Games</button>
-          <ul style="list-style-type:none" class="dropdown-menu mt-2 rounded-0 white border-0 z-depth-1">
-            <li class="dropdown-item dropdown-submenu p-0">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-item w-100">INDOOR GAMES </a>
-              
-               
+                    <a class="dropdown-item" id="collapseExample">
+                      <div class="card dropdown-submenu card-body">
+                        <table class="table table-hover table-bordered mt-5">
+                          <thead>
+                            <tr>
+                              <th>Event name</th>
+                              <th>Entry amount</th>
+                              <th>Game type</th>
+                              <th>Game name</th>
+                              <th>Teams</th>
+                              <th>Winning price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Anniversary Event</td>
+                              <td>1000</td>
+                              <td>Indoor</td>
+                              <td>Snookers</td>
+                              <td>5</td>
+                              <td>100000</td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </a>
+
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#">Chess</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a href="#" class=" dropdown-item" tabindex="-1" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Button with data-target
+                      </a>
+                    </li>
+                    <div class="collapse" id="collapseExample">
+                      <div class="card dropdown-submenu card-body">
+                        <table class="table table-hover table-bordered mt-5">
+                          <thead>
+                            <tr>
+                              <th>Event name</th>
+                              <th>Entry amount</th>
+                              <th>Game type</th>
+                              <th>Game name</th>
+                              <th>Teams</th>
+                              <th>Winning price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Anniversary Event</td>
+                              <td>1000</td>
+                              <td>Indoor</td>
+                              <td>Snookers</td>
+                              <td>5</td>
+                              <td>100000</td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                  </ul>
+                </li>
+              </ul>
+
             </li>
-             
-            <li class="dropdown-item dropdown-submenu p-0">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-item w-100">TOODLER GAMES </a>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item" tabindex="-1" href="#">Full day Games</a>
+              <ul class="dropdown-menu">
 
-              
+
+
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#">Video Games</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a href="#" class=" dropdown-item" tabindex="-1" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Button with data-target
+                      </a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <div class="collapse" id="collapseExample">
+                        <div class="card dropdown-submenu card-body">
+                          <table class="table table-hover table-bordered mt-5">
+                            <thead>
+                              <tr>
+                                <th>Event name</th>
+                                <th>Entry amount</th>
+                                <th>Game type</th>
+                                <th>Game name</th>
+                                <th>Teams</th>
+                                <th>Winning price</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Anniversary Event</td>
+                                <td>1000</td>
+                                <td>Indoor</td>
+                                <td>Snookers</td>
+                                <td>5</td>
+                                <td>100000</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item" tabindex="-1" href="#">Toddler Games</a>
+              <ul class="dropdown-menu">
+
+
+
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#">Pubg</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a href="#" class=" dropdown-item" tabindex="-1" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Button with data-target
+                      </a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <div class="collapse" id="collapseExample">
+                        <div class="card dropdown-submenu card-body">
+                          <table class="table table-hover table-bordered mt-5">
+                            <thead>
+                              <tr>
+                                <th>Event name</th>
+                                <th>Entry amount</th>
+                                <th>Game type</th>
+                                <th>Game name</th>
+                                <th>Teams</th>
+                                <th>Winning price</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Anniversary Event</td>
+                                <td>1000</td>
+                                <td>Indoor</td>
+                                <td>Snookers</td>
+                                <td>5</td>
+                                <td>100000</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+              </ul>
             </li>
           </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- /#page-content-wrapper -->
 
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
 </div>
-<app-footer></app-footer>
+  </div>
+  <app-footer></app-footer>
