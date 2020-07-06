@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class EmployeeRegistrationComponent implements OnInit {
  
   empregistration:EmployeeRegistration=new EmployeeRegistration();
+  
+  
   response:string;
   eid:number;
   ename:string;
@@ -21,9 +23,11 @@ export class EmployeeRegistrationComponent implements OnInit {
   dob:string;
   gender:string;
   reponseError:any; 
+  
   constructor(private empregservice:EmployeeRegistrationService,private router: Router) { }
 
   ngOnInit() {
+    
 
   }
   public empRegister() {
@@ -51,5 +55,6 @@ export class EmployeeRegistrationComponent implements OnInit {
   public empDetails() {
      this.router.navigateByUrl('/viewemp');
   }
-
+  
+  
 }

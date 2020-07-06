@@ -21,6 +21,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewempComponent } from './viewemp/viewemp.component';
+import { PackagesComponent } from './packages/packages.component';
  
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ViewempComponent } from './viewemp/viewemp.component';
     SidebarComponent,
     ViewprofileComponent,
     FooterComponent,
-    ViewempComponent
+    ViewempComponent,
+    PackagesComponent
     ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
 export class EmployeeRegistration {
+    getOne(arg0: string) {
+      throw new Error("Method not implemented.");
+    }
     eid:number;
     ename:string;
     address:string;

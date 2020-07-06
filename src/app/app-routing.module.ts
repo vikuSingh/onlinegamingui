@@ -13,6 +13,7 @@ import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { ViewempComponent } from './viewemp/viewemp.component';
+import { PackagesComponent } from './packages/packages.component';
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:"billing",component:BillingComponent},
   {path:"employee",component:EmployeeRegistrationComponent},
   {path:"event",component:EventComponent},
+  {path:"package",component:PackagesComponent},
   {path:"contact",component:ContactComponent},
   {path:"about",component:AboutComponent},
   {path:"viewprofile",component:ViewprofileComponent},
