@@ -27,8 +27,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     //console.log(history.state)
-    console.log(this.cartDetails)
-    console.log(this.cart)
+    
    }
 
 

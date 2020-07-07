@@ -40,11 +40,7 @@ export class BillingComponent implements OnInit {
      
   
 
-  ngOnInit() {
-        console.log("Billling Details")
-        console.log(this.cart)
-    
-  }
+  ngOnInit() {}
 
   public saveBilling(){
     this.billing.firstName=this.firstName;
