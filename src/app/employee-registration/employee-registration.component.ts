@@ -24,11 +24,12 @@ export class EmployeeRegistrationComponent implements OnInit {
   gender:string;
   reponseError:any; 
   
+   
+
   constructor(private empregservice:EmployeeRegistrationService,private router: Router) { }
 
   ngOnInit() {
-    
-
+     this.gender = null;
   }
   public empRegister() {
      this.empregistration.eid=this.eid;
