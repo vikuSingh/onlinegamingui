@@ -4,6 +4,10 @@ img {
   margin-right: auto;
   width: 70%;
 }
+.head{
+
+  margin-top: 13%;
+}
 
 #wrapper {
   overflow-x: hidden;

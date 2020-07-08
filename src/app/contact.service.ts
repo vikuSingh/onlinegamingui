@@ -11,8 +11,11 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ContactService {
+  getContactview() {
+    throw new Error("Method not implemented.");
+  }
 
-  private CONTACT_URL = "http://localhost:8080/onlinegaming/contact";
+  private CONTACT_URL = "http://localhost:5050/onlinegaming/contact";
   constructor(private httpClient : HttpClient) { }
   
   

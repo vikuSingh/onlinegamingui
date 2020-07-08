@@ -22,6 +22,7 @@ import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewempComponent } from './viewemp/viewemp.component';
 import { PackagesComponent } from './packages/packages.component';
+import { ContactviewComponent } from './contactview/contactview.component';
  
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PackagesComponent } from './packages/packages.component';
     ViewprofileComponent,
     FooterComponent,
     ViewempComponent,
-    PackagesComponent
+    PackagesComponent,
+    ContactviewComponent
     ],
   imports: [
     BrowserModule,

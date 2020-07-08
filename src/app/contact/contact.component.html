@@ -11,17 +11,17 @@
               <div class="row mt-5">
                 <div class="col-md-5">
                   <div class="form-group">
-                    <label class="control-label" for="Firstname"
-                      ><strong>First Name:</strong></label
+                    <label class="control-label" for="Fullname"
+                      ><strong>Full Name:</strong></label
                     >
         
                     <input
                       type="text"
                       class="form-control"
-                      id="FirstName"
-                      placeholder="Enter First Name"
-                      name="firstName"
-                      [(ngModel)]="firstName"
+                      id="FullName"
+                      placeholder="Enter Full Name"
+                      name="fullName"
+                      [(ngModel)]="fullName"
                       #fname="ngModel"
                       required
                     />
@@ -35,49 +35,23 @@
                       <div class="errorMsg" *ngIf="fname.errors.required">
                         required
                       </div>
-                     <!--  <div class="errorMsg" *ngIf="fname.errors.minlength">
-                        Should be at least 3 characters
-                      </div> -->
+                     
                     </div>
                   </div>
                 </div>
         
-                <div class="form-group col-md-5">
-                  <label class="control-label" for="LastName"
-                    ><strong>Last Name:</strong></label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="LastName"
-                    placeholder="Enter Last Name"
-                    name="lastName"
-                    [(ngModel)]="lastName"
-                    #Lastname="ngModel"
-                    required
-                  />
-        
-                  <div
-                    *ngIf="
-                    Lastname.invalid && (Lastname.dirty || Lastname.touched)
-                    "
-                    class="alerts"
-                  >
-                    <div *ngIf="Lastname.errors.required">required</div>
-                    
-                  </div>
-                </div>
-                
-              
-            
                   <div class="col-md-5 form-group">
-                  <label class="control-label" for="country"><strong>Country:</strong></label><br>
-                  <select id="country" name="country" (change)="selectChangeHandler($event)">
-                    <option value="0 selected disabled">select country</option>
-                    <option value="India">India</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Usa">USA</option>
+                  <label class="control-label" for="city"><strong>City:</strong></label><br>
+                  <select class="form-control" name="city" required id="city" [(ngModel)]="city"
+                       #City="ngModel">
+                    <option [ngValue]="null">Select Your city</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mysore">Mysore</option>
                   </select>
+                  <div *ngIf="City.errors && (City.touched || City.dirty)" class="alerts">
+                    <div *ngIf="City.errors.required">Select city</div>
+                  </div>
                   </div>
                 
                   <div class="form-group col-md-5">
@@ -96,19 +70,13 @@
                     <div class="form-group col-md-5">
                       <label class="control-label" for="Type msg"><strong>Type Your Message:</strong></label><br>
                       <textarea id="subject" name="subject" placeholder="Write something.."
-                      [(ngModel)]="subject"></textarea><br>
-                      
-                      <button type="button" class="btn btn-primary" (click)="addContact()">Submit</button>
+                      [(ngModel)]="subject"></textarea><br><br>
+
+                      <button type="button" [disabled]="!contactUsForm.form.valid" class="btn btn-primary" (click)="addContact()">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button type="button" class="btn btn-primary" (click)="contactdetails()">ContactDetails</button>
 
 
                     </div>
-
-                  
-                  
-            
-                
-
-
 
               </div>
               </div>

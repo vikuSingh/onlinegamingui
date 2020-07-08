@@ -4,4 +4,6 @@ export class Contact {
     mobileNo: string;
     country: string;
     subject: string;
+  city: string;
+  fullName: string;
 }

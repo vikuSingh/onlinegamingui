@@ -1,0 +1,40 @@
+
+<div class="d-flex" id="wrapper">
+    <app-sidebar></app-sidebar>
+   <!-- Page Content -->
+   <div id="page-content-wrapper">
+       <app-navbar></app-navbar>
+       <div class="container-fluid">
+        <h2 style="text-align: center;">ContactDetails</h2><br>
+        
+ 
+           <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">s.no</th>
+                <th scope="col">FullName</th>
+                <th scope="col">City</th>
+                <th scope="col">MobileNo</th>
+                <th scope="col">Status</th>
+  
+              </tr>
+            </thead>
+            <tbody  *ngFor="let contact of responseList">
+              <tr>
+                 <td>{{contact.s.no}}</td>
+                 <td>{{contact.FullName}}</td>
+                 <td>{{contact.City}}</td>
+                 <td>{{contact.MobileNo }}</td>
+                 <td> {{contact.Status}} </td>
+                 
+              </tr>
+            </tbody>
+
+          </table>
+           
+       </div>
+   </div>
+   <!-- /#page-content-wrapper -->
+  
+  </div>
+  <app-footer></app-footer>
