@@ -22,7 +22,9 @@ import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewempComponent } from './viewemp/viewemp.component';
 import { PackagesComponent } from './packages/packages.component';
-import { ContactviewComponent } from './contactview/contactview.component';
+import { VieworderComponent } from './vieworder/vieworder.component';
+import { UpdateorderComponent } from './updateorder/updateorder.component';
+import { CancelorderComponent } from './cancelorder/cancelorder.component';
  
 
 @NgModule({
@@ -45,7 +47,10 @@ import { ContactviewComponent } from './contactview/contactview.component';
     FooterComponent,
     ViewempComponent,
     PackagesComponent,
-    ContactviewComponent
+    VieworderComponent,
+    UpdateorderComponent,
+    CancelorderComponent,
+  
     ],
   imports: [
     BrowserModule,

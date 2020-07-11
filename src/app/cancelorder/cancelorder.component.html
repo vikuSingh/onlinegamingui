@@ -1,0 +1,37 @@
+<div class="d-flex" id="wrapper">
+    <app-sidebar></app-sidebar>
+
+    <div id="page-content-wrapper">
+        <app-navbar></app-navbar>
+        <div class="container-fluid">
+            <h1 class="mt-4 header">Cancel Order</h1>
+            <hr>
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">TxId</th>
+                        <th scope="col">ProduceName</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">PhoneNo</th>
+                        <th scope="col">Order Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cancel of cancelBill">
+                        <th>{{cancel.billingId}}</th>
+                        <th>{{cancel.product}}</th>
+                        <th>{{cancel.price}}</th>
+                        <th>{{cancel.phoneNo}}</th>
+                        <th>{{cancel.orderDate | date:'medium'}}</th>
+                    </tr>
+                </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

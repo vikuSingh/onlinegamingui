@@ -1,0 +1,38 @@
+<div class="d-flex" id="wrapper">
+    <app-sidebar></app-sidebar>
+   <!-- Page Content -->
+   <div id="page-content-wrapper">
+       <app-navbar></app-navbar>
+       <div class="container-fluid">
+           <h1 class="mt-4 header">Orders</h1>
+           <hr>
+              
+           <table class="table table-bordered table-havor">
+            <thead>
+              <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">TxId</th>
+                <th scope="col">ProduceName</th>
+                <th scope="col">price</th>
+                <th scope="col">phoneNo</th>
+                <th scope="col">OrderDate</th>
+               
+              </tr>
+            </thead>
+            <tbody  >
+              <tr *ngFor="let bill of billList">
+                 <td>{{bill.billingId}}</td>
+                 <td>{{bill.product}}</td>
+                 <td>{{bill.price}}</td>
+                 <td>{{bill.phoneNo}}</td>
+                 <td>{{bill.orderDate | date:'medium'}}</td>
+              </tr>
+            </tbody>
+          </table>
+  
+       </div>
+   </div>
+   <!-- /#page-content-wrapper -->
+  
+  </div>
+  <app-footer></app-footer>

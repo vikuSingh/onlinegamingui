@@ -14,6 +14,9 @@ import { AboutComponent } from './about/about.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { ViewempComponent } from './viewemp/viewemp.component';
 import { PackagesComponent } from './packages/packages.component';
+import { VieworderComponent } from './vieworder/vieworder.component';
+import { UpdateorderComponent } from './updateorder/updateorder.component';
+import { CancelorderComponent } from './cancelorder/cancelorder.component';
 
 
 
@@ -32,7 +35,12 @@ const routes: Routes = [
   {path:"contact",component:ContactComponent},
   {path:"about",component:AboutComponent},
   {path:"viewprofile",component:ViewprofileComponent},
-  {path:"viewemp",component:ViewempComponent}
+  {path:"viewemp",component:ViewempComponent},
+  {path:"vieworder", component:VieworderComponent},
+  {path:"updateorder", component:UpdateorderComponent},
+  {path: "cancelorder",component:CancelorderComponent }
+
+
   
 ];
 
