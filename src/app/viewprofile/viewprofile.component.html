@@ -8,8 +8,8 @@
               
            <table class="table table-bordered">
             <thead>
-              <tr>
-                <!-- <th scope="col">#</th> -->
+              <tr >
+                <th scope="col">SL.No</th> 
                 <th scope="col">Full Name</th>
                 <th scope="col">fatherName</th>
                 <th scope="col">gender</th>
@@ -22,8 +22,9 @@
                 <th scope="col">pinCode</th>
               </tr>
             </thead>
-            <tbody  *ngFor="let reg of responseList">
+            <tbody  *ngFor="let reg of responseList let i=index">
               <tr>
+                <td>{{i+1}}</td>
                  <td>{{reg.fullName}}</td>
                  <td>{{reg.fatherName}}</td>
                  <td>{{reg.gender}}</td>

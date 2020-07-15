@@ -26,6 +26,7 @@ import { VieworderComponent } from './vieworder/vieworder.component';
 import { UpdateorderComponent } from './updateorder/updateorder.component';
 import { CancelorderComponent } from './cancelorder/cancelorder.component';
 import { LocationComponent } from './location/location.component';
+import { NgxPasswordToggleModule } from 'ngx-password-toggle';
  
 
 @NgModule({
@@ -58,7 +59,8 @@ import { LocationComponent } from './location/location.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPasswordToggleModule
     
   ],
   providers: [],

@@ -11,6 +11,7 @@
            <table class="table table-bordered">
             <thead>
               <tr>
+                <th scope="col">Sl.No</th>
                 <th scope="col">Emp ID</th>
                 <th scope="col">Emp Name</th>
                 <th scope="col">Address</th>
@@ -21,8 +22,9 @@
                 <th scope="col">Gender</th>
               </tr>
             </thead>
-            <tbody  *ngFor="let emp of responseList">
+            <tbody  *ngFor="let emp of responseList let i=index">
               <tr>
+                <td>{{i+1}}</td>
                  <td>{{emp.eid}}</td>
                  <td>{{emp.ename}}</td>
                  <td>{{emp.address}}</td>
