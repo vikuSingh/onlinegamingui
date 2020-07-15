@@ -25,6 +25,7 @@ import { PackagesComponent } from './packages/packages.component';
 import { VieworderComponent } from './vieworder/vieworder.component';
 import { UpdateorderComponent } from './updateorder/updateorder.component';
 import { CancelorderComponent } from './cancelorder/cancelorder.component';
+import { LocationComponent } from './location/location.component';
  
 
 @NgModule({
@@ -50,6 +51,7 @@ import { CancelorderComponent } from './cancelorder/cancelorder.component';
     VieworderComponent,
     UpdateorderComponent,
     CancelorderComponent,
+    LocationComponent
   
     ],
   imports: [

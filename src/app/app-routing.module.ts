@@ -17,6 +17,7 @@ import { PackagesComponent } from './packages/packages.component';
 import { VieworderComponent } from './vieworder/vieworder.component';
 import { UpdateorderComponent } from './updateorder/updateorder.component';
 import { CancelorderComponent } from './cancelorder/cancelorder.component';
+import { LocationComponent } from './location/location.component';
 
 
 
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path:"viewemp",component:ViewempComponent},
   {path:"vieworder", component:VieworderComponent},
   {path:"updateorder", component:UpdateorderComponent},
-  {path: "cancelorder",component:CancelorderComponent }
+  {path: "cancelorder",component:CancelorderComponent },
+  {path: "location",component:LocationComponent}
 
 
   
